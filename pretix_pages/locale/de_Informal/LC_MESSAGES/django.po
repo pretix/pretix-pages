@@ -1,0 +1,138 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Raphael Michel <michel@rami.io>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"X-Generator: Poedit 1.8.11\n"
+
+#: pretix_pages/__init__.py:10 pretix_pages/signals.py:20
+#: pretix_pages/templates/pretix_pages/index.html:6
+#: pretix_pages/templates/pretix_pages/index.html:8
+msgid "Pages"
+msgstr "Seiten"
+
+#: pretix_pages/__init__.py:12
+msgid ""
+"Allows you to add static pages to your event site, for example for a FAQ, "
+"terms of service, etc."
+msgstr ""
+"Erlaubt, statische Seiten zu der Veranstaltungsseite hinzuzufügen, wie z.B. "
+"FAQ, Teilnehmerbedingungen, etc."
+
+#: pretix_pages/models.py:11 pretix_pages/views.py:49
+msgid "URL form"
+msgstr "URL-Version"
+
+#: pretix_pages/models.py:15
+msgid "The slug may only contain letters, numbers, dots and dashes."
+msgstr ""
+"Die URL-Version darf nur Zahlen, Buchstaben, Punkte und Bindestriche "
+"enthalten."
+
+#: pretix_pages/models.py:19 pretix_pages/templates/pretix_pages/index.html:29
+msgid "Page title"
+msgstr "Seitentitel"
+
+#: pretix_pages/models.py:20 pretix_pages/templates/pretix_pages/form.html:21
+msgid "Page content"
+msgstr "Seiteninhalt"
+
+#: pretix_pages/models.py:21
+msgid "Show link on the event start page"
+msgstr "Link auf der Startseite anzeigen"
+
+#: pretix_pages/models.py:22
+msgid "Show link in the event footer"
+msgstr "Link in der Fußzeile anzeigen"
+
+#: pretix_pages/signals.py:35
+msgid "The page has been created."
+msgstr "Die Seite wurde erstellt."
+
+#: pretix_pages/signals.py:36
+msgid "The page has been modified."
+msgstr "Die Seite wurde verändert."
+
+#: pretix_pages/signals.py:37
+msgid "The page has been deleted."
+msgstr "Die Seite wurde gelöscht"
+
+#: pretix_pages/templates/pretix_pages/delete.html:4
+#: pretix_pages/templates/pretix_pages/delete.html:6
+msgid "Delete a page"
+msgstr "Seite löschen"
+
+#: pretix_pages/templates/pretix_pages/delete.html:9
+#, python-format
+msgid "Are you sure you want to delete the page <strong>%(name)s</strong>?"
+msgstr ""
+"Bist du sicher, dass du die Seite <strong>%(name)s</strong> löschen "
+"möchtest?"
+
+#: pretix_pages/templates/pretix_pages/delete.html:14
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: pretix_pages/templates/pretix_pages/delete.html:17
+msgid "Delete"
+msgstr "Löschen"
+
+#: pretix_pages/templates/pretix_pages/form.html:5
+#: pretix_pages/templates/pretix_pages/form.html:7
+msgid "Page"
+msgstr "Seite"
+
+#: pretix_pages/templates/pretix_pages/form.html:14
+msgid "General information"
+msgstr "Allgemeine Informationen"
+
+#: pretix_pages/templates/pretix_pages/form.html:24
+msgid "Please enable JavaScript"
+msgstr "Bitte JavaScript aktivieren"
+
+#: pretix_pages/templates/pretix_pages/form.html:52
+msgid "Save"
+msgstr "Speichern"
+
+#: pretix_pages/templates/pretix_pages/form.html:61
+msgid "Page history"
+msgstr "Seiten-Verlauf"
+
+#: pretix_pages/templates/pretix_pages/front_page.html:4
+msgid "More information"
+msgstr "Mehr Informationen"
+
+#: pretix_pages/templates/pretix_pages/index.html:12
+msgid "You haven't created any pages yet."
+msgstr "Du hast noch keine Seiten erstellt."
+
+#: pretix_pages/templates/pretix_pages/index.html:18
+#: pretix_pages/templates/pretix_pages/index.html:22
+msgid "Create a new page"
+msgstr "Neue Seite erstellen"
+
+#: pretix_pages/views.py:42
+msgid "You already have a page on that URL."
+msgstr "Du hast bereits eine Seite mit dieser URL."
+
+#: pretix_pages/views.py:63 pretix_pages/views.py:174
+msgid "The requested page does not exist."
+msgstr "Die gesuchte Seite existiert nicht."
+
+#: pretix_pages/views.py:83
+msgid "The selected page has been deleted."
+msgstr "Die Seite wurde gelöscht."
+
+#: pretix_pages/views.py:124
+msgid "Your changes have been saved."
+msgstr "Deine Änderungen wurden gespeichert."
+
+#: pretix_pages/views.py:156
+msgid "The new page has been created."
+msgstr "Die neue Seite wurde erstellt."

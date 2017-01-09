@@ -80,7 +80,7 @@ class PageDelete(EventPermissionRequiredMixin, PageDetailMixin, DeleteView):
         self.object = self.get_object()
         self.object.log_action('pretix_pages.page.deleted', user=self.request.user)
         self.object.delete()
-        messages.success(request, _('The selected category has been deleted.'))
+        messages.success(request, _('The selected page has been deleted.'))
         return HttpResponseRedirect(self.get_success_url())
 
 
