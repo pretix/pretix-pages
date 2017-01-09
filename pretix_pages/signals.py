@@ -2,12 +2,12 @@ from django.dispatch import receiver
 from django.template.loader import get_template
 from django.urls import resolve, reverse
 from django.utils.translation import ugettext_lazy as _
-
 from pretix.base.signals import logentry_display
 from pretix.base.views.redirect import safelink
 from pretix.control.signals import nav_event
 from pretix.multidomain.urlreverse import eventreverse
 from pretix.presale.signals import footer_link, front_page_bottom
+
 from .models import Page
 
 

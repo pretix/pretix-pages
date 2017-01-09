@@ -5,12 +5,13 @@ from django.http import Http404, HttpResponseRedirect
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import DeleteView, ListView, CreateView, UpdateView
-from django.views.generic import TemplateView
-
+from django.views.generic import (
+    CreateView, DeleteView, ListView, TemplateView, UpdateView,
+)
+from pretix.base.forms import I18nModelForm
 from pretix.control.permissions import EventPermissionRequiredMixin
 from pretix.presale.utils import event_view
-from pretix.base.forms import I18nModelForm
+
 from .models import Page
 
 
