@@ -1,0 +1,11 @@
+{% extends "pretixpresale/event/base.html" %}
+{% load i18n %}
+{% load bootstrap3 %}
+
+{% block title %}{{ page.title }} :: {{ event.name }}{% endblock %}
+{% block content %}
+
+    <h2>{{ page.title }}</h2>
+    {{ content }}
+
+{% endblock %}

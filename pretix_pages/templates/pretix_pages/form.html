@@ -1,13 +1,13 @@
-{% extends "pretixcontrol/items/base.html" %}
+{% extends "pretixcontrol/event/base.html" %}
 {% load i18n %}
 {% load bootstrap3 %}
 {% load staticfiles %}
 {% block title %}{% trans "Page" %}{% endblock %}
-{% block inside %}
+{% block content %}
 	<h1>{% trans "Page" %}</h1>
 	<form action="" method="post" class="form-horizontal" data-id="{{ page.id }}">
 		{% csrf_token %}
-        {% bootstrap_form_errors form %}
+        {% bootstrap_form_errors form type='non_fields' %}
         <div class="row">
             <div class="col-xs-12 {% if page %}col-lg-10{% endif %}">
                 <fieldset>

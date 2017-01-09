@@ -2,6 +2,7 @@
 {% load i18n %}
 {% load compress %}
 {% load staticfiles %}
+{% load eventurl %}
 {% block title %}{% trans "Pages" %}{% endblock %}
 {% block content %}
     <h1>{% trans "Pages" %}</h1>
@@ -36,6 +37,7 @@
                             <strong><a href="{% url "plugins:pretix_pages:edit" organizer=request.event.organizer.slug event=request.event.slug page=p.id %}">{{ p.title }}</a></strong>
                         </td>
                         <td class="text-right">
+                            <a href="{% eventurl request.event "plugins:pretix_pages:show" slug=p.slug %}" class="btn btn-default btn-sm" target="_blank"><i class="fa fa-eye"></i></a>
                             <a href="{% url "plugins:pretix_pages:edit" organizer=request.event.organizer.slug event=request.event.slug page=p.id %}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
                             <a href="{% url "plugins:pretix_pages:delete" organizer=request.event.organizer.slug event=request.event.slug page=p.id %}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                         </td>

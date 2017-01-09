@@ -16,3 +16,7 @@ urlpatterns = [
         views.PageDelete.as_view(),
         name='delete'),
 ]
+
+event_patterns = [
+    url(r'^page/(?P<slug>[^/]+)/$', views.ShowPageView.as_view(), name='show'),
+]

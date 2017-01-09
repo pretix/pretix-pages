@@ -1,13 +1,16 @@
 from django import forms
 from django.contrib import messages
 from django.db import transaction
-from django.http import Http404
-from django.http import HttpResponseRedirect
+from django.http import Http404, HttpResponseRedirect
 from django.urls import reverse
+from django.utils.decorators import method_decorator
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import DeleteView, ListView, CreateView, UpdateView
+from django.views.generic import TemplateView
 
 from pretix.control.permissions import EventPermissionRequiredMixin
+from pretix.presale.utils import event_view
+from pretix.base.forms import I18nModelForm
 from .models import Page
 
 
@@ -18,7 +21,11 @@ class PageList(EventPermissionRequiredMixin, ListView):
     template_name = 'pretix_pages/index.html'
 
 
-class PageForm(forms.ModelForm):
+class PageForm(I18nModelForm):
+
+    def __init__(self, *args, **kwargs):
+        self.event = kwargs.get('event')
+        super().__init__(*args, **kwargs)
 
     class Meta:
         model = Page
@@ -26,9 +33,21 @@ class PageForm(forms.ModelForm):
             'title', 'slug', 'text', 'link_in_footer', 'link_on_frontpage'
         )
 
+    def clean_slug(self):
+        slug = self.cleaned_data['slug']
+        if Page.objects.filter(slug=slug, event=self.event).exists():
+            raise forms.ValidationError(
+                _('You already have a page on that URL.'),
+                code='duplicate_slug',
+            )
+        return slug
+
 
 class PageEditForm(PageForm):
     slug = forms.CharField(label=_('URL form'), disabled=True)
+
+    def clean_slug(self):
+        return self.instance.slug
 
 
 class PageDetailMixin:
@@ -69,6 +88,11 @@ class PageUpdate(EventPermissionRequiredMixin, PageDetailMixin, UpdateView):
     template_name = 'pretix_pages/form.html'
     context_object_name = 'page'
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['event'] = self.request.event
+        return kwargs
+
     @transaction.atomic
     def form_valid(self, form):
         messages.success(self.request, _('Your changes have been saved.'))
@@ -86,6 +110,11 @@ class PageCreate(EventPermissionRequiredMixin, CreateView):
     form_class = PageForm
     template_name = 'pretix_pages/form.html'
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['event'] = self.request.event
+        return kwargs
+
     def get_success_url(self) -> str:
         return reverse('plugins:pretix_pages:index', kwargs={
             'organizer': self.request.event.organizer.slug,
@@ -100,3 +129,24 @@ class PageCreate(EventPermissionRequiredMixin, CreateView):
         form.instance.log_action('pretix_pages.page.added', data=dict(form.cleaned_data),
                                  user=self.request.user)
         return ret
+
+
+@method_decorator(event_view, name='dispatch')
+class ShowPageView(TemplateView):
+    template_name = 'pretix_pages/show.html'
+
+    def get_page(self):
+        try:
+            return Page.objects.get(
+                event=self.request.event,
+                slug=self.kwargs['slug']
+            )
+        except Page.DoesNotExist:
+            raise Http404(_("The requested page does not exist."))
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data()
+        page = self.get_page()
+        ctx['page'] = page
+        ctx['content'] = str(page.text)
+        return ctx
