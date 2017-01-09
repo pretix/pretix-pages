@@ -27,6 +27,10 @@ class PageForm(forms.ModelForm):
         )
 
 
+class PageEditForm(PageForm):
+    slug = forms.CharField(label=_('URL form'), disabled=True)
+
+
 class PageDetailMixin:
     def get_object(self, queryset=None) -> Page:
         try:
@@ -61,7 +65,7 @@ class PageDelete(EventPermissionRequiredMixin, PageDetailMixin, DeleteView):
 
 class PageUpdate(EventPermissionRequiredMixin, PageDetailMixin, UpdateView):
     model = Page
-    form_class = PageForm
+    form_class = PageEditForm
     template_name = 'pretix_pages/form.html'
     context_object_name = 'page'
 
