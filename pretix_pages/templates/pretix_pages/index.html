@@ -1,0 +1,49 @@
+{% extends "pretixcontrol/event/base.html" %}
+{% load i18n %}
+{% load compress %}
+{% load staticfiles %}
+{% block title %}{% trans "Pages" %}{% endblock %}
+{% block content %}
+    <h1>{% trans "Pages" %}</h1>
+    {% if pages|length == 0 %}
+        <div class="empty-collection">
+            <p>
+                {% blocktrans trimmed %}
+                    You haven't created any pages yet.
+                {% endblocktrans %}
+            </p>
+
+            <a href="{% url "plugins:pretix_pages:create" organizer=request.event.organizer.slug event=request.event.slug %}"
+                    class="btn btn-primary btn-lg"><i class="fa fa-plus"></i> {% trans "Create a new page" %}</a>
+        </div>
+    {% else %}
+        <p>
+            <a href="{% url "plugins:pretix_pages:create" organizer=request.event.organizer.slug event=request.event.slug %}" class="btn btn-default"><i class="fa fa-plus"></i> {% trans "Create a new page" %}
+            </a>
+        </p>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>{% trans "Page title" %}</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for p in pages %}
+                    <tr>
+                        <td>
+                            <strong><a href="{% url "plugins:pretix_pages:edit" organizer=request.event.organizer.slug event=request.event.slug page=p.id %}">{{ p.name }}</a></strong>
+                        </td>
+                        <td class="text-right">
+                            <a href="{% url "plugins:pretix_pages:delete" organizer=request.event.organizer.slug event=request.event.slug page=p.id %}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include "pretixcontrol/pagination.html" %}
+    {% endif %}
+{% endblock %}
+
