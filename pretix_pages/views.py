@@ -1,3 +1,4 @@
+import bleach
 from django import forms
 from django.contrib import messages
 from django.db import transaction
@@ -83,16 +84,40 @@ class PageDelete(EventPermissionRequiredMixin, PageDetailMixin, DeleteView):
         return HttpResponseRedirect(self.get_success_url())
 
 
-class PageUpdate(EventPermissionRequiredMixin, PageDetailMixin, UpdateView):
-    model = Page
-    form_class = PageEditForm
-    template_name = 'pretix_pages/form.html'
-    context_object_name = 'page'
+class PageEditorMixin:
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         kwargs['event'] = self.request.event
         return kwargs
+
+
+class PageUpdate(EventPermissionRequiredMixin, PageDetailMixin, PageEditorMixin, UpdateView):
+    model = Page
+    form_class = PageEditForm
+    template_name = 'pretix_pages/form.html'
+    context_object_name = 'page'
+
+    def get_success_url(self) -> str:
+        return reverse('plugins:pretix_pages:edit', kwargs={
+            'organizer': self.request.event.organizer.slug,
+            'event': self.request.event.slug,
+            'page': self.object.pk
+        })
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data()
+        ctx['locales'] = []
+        for lng in self.request.event.settings.locales:
+            dataline = (
+                self.object.text.data[lng]
+                if self.object.text is not None and (
+                    isinstance(self.object.text.data, dict)
+                ) and lng in self.object.text.data
+                else ""
+            )
+            ctx['locales'].append((lng, dataline))
+        return ctx
 
     @transaction.atomic
     def form_valid(self, form):
@@ -106,15 +131,18 @@ class PageUpdate(EventPermissionRequiredMixin, PageDetailMixin, UpdateView):
         return super().form_valid(form)
 
 
-class PageCreate(EventPermissionRequiredMixin, CreateView):
+class PageCreate(EventPermissionRequiredMixin, PageEditorMixin, CreateView):
     model = Page
     form_class = PageForm
     template_name = 'pretix_pages/form.html'
 
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs['event'] = self.request.event
-        return kwargs
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data()
+        ctx['locales'] = [
+            (l, "")
+            for l in self.request.event.settings.locales
+        ]
+        return ctx
 
     def get_success_url(self) -> str:
         return reverse('plugins:pretix_pages:index', kwargs={
@@ -149,5 +177,22 @@ class ShowPageView(TemplateView):
         ctx = super().get_context_data()
         page = self.get_page()
         ctx['page'] = page
-        ctx['content'] = str(page.text)
+
+        attributes = dict(bleach.ALLOWED_ATTRIBUTES)
+        attributes['a'] = ['href', 'title', 'target']
+        attributes['p'] = ['class']
+        attributes['li'] = ['class']
+
+        ctx['content'] = bleach.clean(str(page.text), tags=bleach.ALLOWED_TAGS + [
+            'p',
+            'br',
+            's',
+            'sup',
+            'sub',
+            'u',
+            'h3',
+            'h4',
+            'h5',
+            'h6'
+        ], attributes=attributes)
         return ctx

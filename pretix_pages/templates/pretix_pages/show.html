@@ -6,6 +6,8 @@
 {% block content %}
 
     <h2>{{ page.title }}</h2>
-    {{ content }}
+    <div class="ql-content">
+        {{ content|safe }}
+    </div>
 
 {% endblock %}

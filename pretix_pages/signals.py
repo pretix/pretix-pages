@@ -3,10 +3,11 @@ from django.template.loader import get_template
 from django.urls import resolve, reverse
 from django.utils.translation import ugettext_lazy as _
 from pretix.base.signals import logentry_display
-from pretix.base.views.redirect import safelink
-from pretix.control.signals import nav_event
+from pretix.control.signals import html_head, nav_event
 from pretix.multidomain.urlreverse import eventreverse
-from pretix.presale.signals import footer_link, front_page_bottom
+from pretix.presale.signals import (
+    footer_link, front_page_bottom, html_head as html_head_presale,
+)
 
 from .models import Page
 
@@ -61,3 +62,23 @@ def pretixpresale_front_page_bottom(sender, **kwargs):
             'event': sender,
             'pages': pages
         })
+
+
+@receiver(html_head, dispatch_uid="pages_html_head")
+def html_head_control(sender, request=None, **kwargs):
+    url = resolve(request.path_info)
+    if url.namespace == 'plugins:pretix_pages':
+        template = get_template('pretix_pages/control_head.html')
+        return template.render({})
+    else:
+        return ""
+
+
+@receiver(html_head_presale, dispatch_uid="pages_html_head_presale")
+def html_head_presale(sender, request=None, **kwargs):
+    url = resolve(request.path_info)
+    if url.namespace == 'plugins:pretix_pages':
+        template = get_template('pretix_pages/presale_head.html')
+        return template.render({})
+    else:
+        return ""

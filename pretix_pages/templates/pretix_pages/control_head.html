@@ -1,0 +1,7 @@
+{% load staticfiles %}
+{% load compress %}
+
+{% compress css %}
+    <link type="text/css" rel="stylesheet" href="{% static "pretix_pages/quill/quill.snow.css" %}">
+    <link type="text/css" rel="stylesheet" href="{% static "pretix_pages/quill-edit.css" %}">
+{% endcompress %}
