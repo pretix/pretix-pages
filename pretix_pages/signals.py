@@ -1,13 +1,18 @@
 from django.dispatch import receiver
+from django.template.loader import get_template
 from django.urls import resolve, reverse
 from django.utils.translation import ugettext_lazy as _
 
 from pretix.base.signals import logentry_display
+from pretix.base.views.redirect import safelink
 from pretix.control.signals import nav_event
+from pretix.multidomain.urlreverse import eventreverse
+from pretix.presale.signals import footer_link, front_page_bottom
+from .models import Page
 
 
 @receiver(nav_event, dispatch_uid="pages_nav")
-def control_nav_import(sender, request=None, **kwargs):
+def control_nav_pages(sender, request=None, **kwargs):
     url = resolve(request.path_info)
     return [
         {
@@ -33,3 +38,26 @@ def pretixcontrol_logentry_display(sender, logentry, **kwargs):
 
     if event_type in plains:
         return plains[event_type]
+
+
+@receiver(footer_link, dispatch_uid="pages_footer_links")
+def footer_link_pages(sender, request=None, **kwargs):
+    return [
+        {
+            'label': p.title,
+            'url': eventreverse(sender, 'plugins:pretix_pages:show', kwargs={
+                'slug': p.slug
+            })
+        } for p in Page.objects.filter(event=sender, link_in_footer=True)
+    ]
+
+
+@receiver(signal=front_page_bottom, dispatch_uid="pages_frontpage_linls")
+def pretixpresale_front_page_bottom(sender, **kwargs):
+    pages = list(Page.objects.filter(event=sender, link_on_frontpage=True))
+    if pages:
+        template = get_template('pretix_pages/front_page.html')
+        return template.render({
+            'event': sender,
+            'pages': pages
+        })
