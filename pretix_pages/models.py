@@ -20,3 +20,6 @@ class Page(LoggedModel):
     text = I18nTextField(verbose_name=_('Page content'))
     link_on_frontpage = models.BooleanField(default=False, verbose_name=_('Show link on the event start page'))
     link_in_footer = models.BooleanField(default=False, verbose_name=_('Show link in the event footer'))
+    require_confirmation = models.BooleanField(default=False,
+                                               verbose_name=_('Require the user to acknowledge this page before an '
+                                                              'order is created (e.g. for terms of service).'))

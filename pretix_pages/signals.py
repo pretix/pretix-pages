@@ -6,7 +6,7 @@ from pretix.base.signals import logentry_display
 from pretix.control.signals import html_head, nav_event
 from pretix.multidomain.urlreverse import eventreverse
 from pretix.presale.signals import (
-    footer_link, front_page_bottom, html_head as html_head_presale,
+    footer_link, front_page_bottom, html_head as html_head_presale, checkout_confirm_messages
 )
 
 from .models import Page
@@ -82,3 +82,23 @@ def html_head_presale(sender, request=None, **kwargs):
         return template.render({})
     else:
         return ""
+
+
+@receiver(checkout_confirm_messages, dispatch_uid="pages_confirm_messages")
+def confirm_messages(sender, *args, **kwargs):
+    pages = list(Page.objects.filter(event=sender, require_confirmation=True))
+    if not pages:
+        return {}
+
+    return {
+        'pages': _('I have read and agree with the content of the following pages: {plist}').format(
+            plist=', '.join([
+                '<a href="{url}" target="_blank">{title}</a>'.format(
+                    title=str(p.title),
+                    url=eventreverse(sender, 'plugins:pretix_pages:show', kwargs={
+                        'slug': p.slug
+                    })
+                ) for p in pages
+            ])
+        )
+    }

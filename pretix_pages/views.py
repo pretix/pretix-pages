@@ -32,7 +32,7 @@ class PageForm(I18nModelForm):
     class Meta:
         model = Page
         fields = (
-            'title', 'slug', 'text', 'link_in_footer', 'link_on_frontpage'
+            'title', 'slug', 'text', 'link_in_footer', 'link_on_frontpage', 'require_confirmation'
         )
 
     def clean_slug(self):
