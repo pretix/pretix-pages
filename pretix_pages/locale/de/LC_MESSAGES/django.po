@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-09 21:33+0100\n"
+"POT-Creation-Date: 2017-02-20 15:35+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Raphael Michel <michel@rami.io>\n"
 "Language-Team: \n"
@@ -40,7 +40,7 @@ msgstr ""
 msgid "Page title"
 msgstr "Seitentitel"
 
-#: pretix_pages/models.py:20 pretix_pages/templates/pretix_pages/form.html:21
+#: pretix_pages/models.py:20 pretix_pages/templates/pretix_pages/form.html:22
 msgid "Page content"
 msgstr "Seiteninhalt"
 
@@ -51,6 +51,14 @@ msgstr "Link auf der Startseite anzeigen"
 #: pretix_pages/models.py:22
 msgid "Show link in the event footer"
 msgstr "Link in der Fußzeile anzeigen"
+
+#: pretix_pages/models.py:24
+msgid ""
+"Require the user to acknowledge this page before an order is created (e.g. "
+"for terms of service)."
+msgstr ""
+"Die Inhalte dieser Seite müssen vom Benutzer akzeptiert werden, um eine "
+"Bestellung abzuschicken (z.B. für Teilnahmebedingungen)."
 
 #: pretix_pages/signals.py:35
 msgid "The page has been created."
@@ -63,6 +71,13 @@ msgstr "Die Seite wurde verändert."
 #: pretix_pages/signals.py:37
 msgid "The page has been deleted."
 msgstr "Die Seite wurde gelöscht"
+
+#: pretix_pages/signals.py:94
+#, python-brace-format
+msgid "I have read and agree with the content of the following pages: {plist}"
+msgstr ""
+"Ich habe die Inhalte der folgenden Seiten gelesen und stimme ihnen zu: "
+"{plist}"
 
 #: pretix_pages/templates/pretix_pages/delete.html:4
 #: pretix_pages/templates/pretix_pages/delete.html:6
@@ -93,15 +108,15 @@ msgstr "Seite"
 msgid "General information"
 msgstr "Allgemeine Informationen"
 
-#: pretix_pages/templates/pretix_pages/form.html:24
+#: pretix_pages/templates/pretix_pages/form.html:25
 msgid "Please enable JavaScript"
 msgstr "Bitte JavaScript aktivieren"
 
-#: pretix_pages/templates/pretix_pages/form.html:52
+#: pretix_pages/templates/pretix_pages/form.html:53
 msgid "Save"
 msgstr "Speichern"
 
-#: pretix_pages/templates/pretix_pages/form.html:61
+#: pretix_pages/templates/pretix_pages/form.html:62
 msgid "Page history"
 msgstr "Seiten-Verlauf"
 
