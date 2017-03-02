@@ -1,7 +1,7 @@
 from django.core.validators import RegexValidator
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from pretix.base.i18n import I18nCharField, I18nTextField
+from i18nfield.fields import I18nCharField, I18nTextField
 from pretix.base.models import LoggedModel
 
 

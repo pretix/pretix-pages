@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 import django.db.models.deletion
-import pretix.base.i18n
+import i18nfield.fields
 from django.db import migrations, models
 
 
@@ -21,8 +21,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('slug', models.CharField(db_index=True, max_length=150)),
-                ('title', pretix.base.i18n.I18nCharField()),
-                ('text', pretix.base.i18n.I18nTextField()),
+                ('title', i18nfield.fields.I18nCharField()),
+                ('text', i18nfield.fields.I18nTextField()),
                 ('link_on_frontpage', models.BooleanField(default=False)),
                 ('link_in_footer', models.BooleanField(default=False)),
                 ('event', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='pretixbase.Event')),

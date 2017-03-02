@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 import django.core.validators
 from django.db import migrations, models
-import pretix.base.i18n
+import i18nfield.fields
 
 
 class Migration(migrations.Migration):
@@ -37,11 +37,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='page',
             name='text',
-            field=pretix.base.i18n.I18nTextField(verbose_name='Page content'),
+            field=i18nfield.fields.I18nTextField(verbose_name='Page content'),
         ),
         migrations.AlterField(
             model_name='page',
             name='title',
-            field=pretix.base.i18n.I18nCharField(verbose_name='Page title'),
+            field=i18nfield.fields.I18nCharField(verbose_name='Page title'),
         ),
     ]
