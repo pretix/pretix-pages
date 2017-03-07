@@ -22,6 +22,9 @@ class PageList(EventPermissionRequiredMixin, ListView):
     paginate_by = 20
     template_name = 'pretix_pages/index.html'
 
+    def get_queryset(self):
+        return Page.objects.filter(event=self.request.event)
+
 
 class PageForm(I18nModelForm):
 
