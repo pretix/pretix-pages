@@ -15,6 +15,8 @@ class Page(LoggedModel):
                 message=_("The slug may only contain letters, numbers, dots and dashes.")
             ),
         ],
+        help_text=_("This will be used to generate the URL of the page. Please only use latin letters, "
+                    "numbers, dots and dashes. You cannot change this afterwards.")
     )
     title = I18nCharField(verbose_name=_('Page title'))
     text = I18nTextField(verbose_name=_('Page content'))

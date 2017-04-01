@@ -28,6 +28,7 @@ $(function () {
 
     var quills = {};
     $('.editor').each(function () {
+        $(this).html($("textarea[name^=text_][lang=" + $(this).attr("data-lng") + "]").val());
         quills[$(this).attr("data-lng")] = new Quill($(this).get(0), {
             theme: 'snow',
             formats: [

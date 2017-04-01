@@ -133,6 +133,10 @@ class PageUpdate(EventPermissionRequiredMixin, PageDetailMixin, PageEditorMixin,
             )
         return super().form_valid(form)
 
+    def form_invalid(self, form):
+        messages.error(self.request, _('We could not save your changes. See below for details.'))
+        return super().form_invalid(form)
+
 
 class PageCreate(EventPermissionRequiredMixin, PageEditorMixin, CreateView):
     model = Page
@@ -161,6 +165,10 @@ class PageCreate(EventPermissionRequiredMixin, PageEditorMixin, CreateView):
         form.instance.log_action('pretix_pages.page.added', data=dict(form.cleaned_data),
                                  user=self.request.user)
         return ret
+
+    def form_invalid(self, form):
+        messages.error(self.request, _('We could not save your changes. See below for details.'))
+        return super().form_invalid(form)
 
 
 @method_decorator(event_view, name='dispatch')
