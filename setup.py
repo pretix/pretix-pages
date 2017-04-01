@@ -25,7 +25,7 @@ cmdclass = {
 
 setup(
     name='pretix-pages',
-    version='1.1.1',
+    version='1.1.2',
     description='pretix plugin that allows you to add static pages to your event site, for example for a FAQ, terms of service, etc.',
     long_description=long_description,
     url='https://github.com/pretix/pretix-pages',
