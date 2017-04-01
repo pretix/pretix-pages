@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-20 15:35+0100\n"
+"POT-Creation-Date: 2017-04-01 15:50+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Raphael Michel <michel@rami.io>\n"
 "Language-Team: \n"
@@ -26,7 +26,7 @@ msgstr ""
 "Erlaubt, statische Seiten zu der Veranstaltungsseite hinzuzufügen, wie z.B. "
 "FAQ, Teilnehmerbedingungen, etc."
 
-#: pretix_pages/models.py:11 pretix_pages/views.py:49
+#: pretix_pages/models.py:11 pretix_pages/views.py:52
 msgid "URL form"
 msgstr "URL-Version"
 
@@ -36,23 +36,32 @@ msgstr ""
 "Die URL-Version darf nur Zahlen, Buchstaben, Punkte und Bindestriche "
 "enthalten."
 
-#: pretix_pages/models.py:19 pretix_pages/templates/pretix_pages/index.html:29
+#: pretix_pages/models.py:18
+msgid ""
+"This will be used to generate the URL of the page. Please only use latin "
+"letters, numbers, dots and dashes. You cannot change this afterwards."
+msgstr ""
+"Dies wird benutzt, um die URL der Seite zu generieren. Bitte verwende nur "
+"lateinische Buchstaben, Zahlen, Punkte und Bindestriche. Du kannst diesen "
+"Wert nicht mehr ändern."
+
+#: pretix_pages/models.py:21 pretix_pages/templates/pretix_pages/index.html:29
 msgid "Page title"
 msgstr "Seitentitel"
 
-#: pretix_pages/models.py:20 pretix_pages/templates/pretix_pages/form.html:22
+#: pretix_pages/models.py:22 pretix_pages/templates/pretix_pages/form.html:22
 msgid "Page content"
 msgstr "Seiteninhalt"
 
-#: pretix_pages/models.py:21
+#: pretix_pages/models.py:23
 msgid "Show link on the event start page"
 msgstr "Link auf der Startseite anzeigen"
 
-#: pretix_pages/models.py:22
+#: pretix_pages/models.py:24
 msgid "Show link in the event footer"
 msgstr "Link in der Fußzeile anzeigen"
 
-#: pretix_pages/models.py:24
+#: pretix_pages/models.py:26
 msgid ""
 "Require the user to acknowledge this page before an order is created (e.g. "
 "for terms of service)."
@@ -132,22 +141,28 @@ msgstr "Du hast noch keine Seiten erstellt."
 msgid "Create a new page"
 msgstr "Neue Seite erstellen"
 
-#: pretix_pages/views.py:42
+#: pretix_pages/views.py:45
 msgid "You already have a page on that URL."
 msgstr "Du hast bereits eine Seite mit dieser URL."
 
-#: pretix_pages/views.py:63 pretix_pages/views.py:174
+#: pretix_pages/views.py:66 pretix_pages/views.py:185
 msgid "The requested page does not exist."
 msgstr "Die gesuchte Seite existiert nicht."
 
-#: pretix_pages/views.py:83
+#: pretix_pages/views.py:86
 msgid "The selected page has been deleted."
 msgstr "Die Seite wurde gelöscht."
 
-#: pretix_pages/views.py:124
+#: pretix_pages/views.py:127
 msgid "Your changes have been saved."
 msgstr "Deine Änderungen wurden gespeichert."
 
-#: pretix_pages/views.py:156
+#: pretix_pages/views.py:137 pretix_pages/views.py:170
+msgid "We could not save your changes. See below for details."
+msgstr ""
+"Die Änderungen konnten nicht gespeichert werden. Die fehlerhaften Felder "
+"sind farblich markiert."
+
+#: pretix_pages/views.py:163
 msgid "The new page has been created."
 msgstr "Die neue Seite wurde erstellt."
