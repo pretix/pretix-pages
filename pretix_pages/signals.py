@@ -2,7 +2,7 @@ from django.dispatch import receiver
 from django.template.loader import get_template
 from django.urls import resolve, reverse
 from django.utils.translation import ugettext_lazy as _
-from pretix.base.signals import logentry_display
+from pretix.base.signals import logentry_display, event_copy_data
 from pretix.control.signals import html_head, nav_event
 from pretix.multidomain.urlreverse import eventreverse
 from pretix.presale.signals import (
@@ -26,6 +26,14 @@ def control_nav_pages(sender, request=None, **kwargs):
             'icon': 'file-text',
         }
     ]
+
+
+@receiver(signal=event_copy_data, dispatch_uid="pages_copy_data")
+def event_copy_data_receiver(sender, other, **kwargs):
+    for p in Page.objects.filter(event=other):
+        p.pk = None
+        p.event = sender
+        p.save()
 
 
 @receiver(signal=logentry_display, dispatch_uid="pages_logentry_display")
