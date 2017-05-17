@@ -21,6 +21,7 @@ class PageList(EventPermissionRequiredMixin, ListView):
     context_object_name = 'pages'
     paginate_by = 20
     template_name = 'pretix_pages/index.html'
+    permission = 'can_change_event_settings'
 
     def get_queryset(self):
         return Page.objects.filter(event=self.request.event)
@@ -77,6 +78,7 @@ class PageDelete(EventPermissionRequiredMixin, PageDetailMixin, DeleteView):
     form_class = PageForm
     template_name = 'pretix_pages/delete.html'
     context_object_name = 'page'
+    permission = 'can_change_event_settings'
 
     @transaction.atomic
     def delete(self, request, *args, **kwargs):
@@ -100,6 +102,7 @@ class PageUpdate(EventPermissionRequiredMixin, PageDetailMixin, PageEditorMixin,
     form_class = PageEditForm
     template_name = 'pretix_pages/form.html'
     context_object_name = 'page'
+    permission = 'can_change_event_settings'
 
     def get_success_url(self) -> str:
         return reverse('plugins:pretix_pages:edit', kwargs={
@@ -142,6 +145,7 @@ class PageCreate(EventPermissionRequiredMixin, PageEditorMixin, CreateView):
     model = Page
     form_class = PageForm
     template_name = 'pretix_pages/form.html'
+    permission = 'can_change_event_settings'
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data()
