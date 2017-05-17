@@ -28,6 +28,7 @@
                 <tr>
                     <th>{% trans "Page title" %}</th>
                     <th></th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -35,6 +36,10 @@
                     <tr>
                         <td>
                             <strong><a href="{% url "plugins:pretix_pages:edit" organizer=request.event.organizer.slug event=request.event.slug page=p.id %}">{{ p.title }}</a></strong>
+                        </td>
+                        <td class="text-right">
+                            <a href="{% url "plugins:pretix_pages:up" organizer=request.event.organizer.slug event=request.event.slug page=p.id %}" class="btn btn-default btn-sm {% if forloop.counter0 == 0 %}disabled{% endif %}"><i class="fa fa-arrow-up"></i></a>
+                            <a href="{% url "plugins:pretix_pages:down" organizer=request.event.organizer.slug event=request.event.slug page=p.id %}" class="btn btn-default btn-sm {% if forloop.revcounter0 == 0 %}disabled{% endif %}"><i class="fa fa-arrow-down"></i></a>
                         </td>
                         <td class="text-right">
                             <a href="{% eventurl request.event "plugins:pretix_pages:show" slug=p.slug %}" class="btn btn-default btn-sm" target="_blank"><i class="fa fa-eye"></i></a>

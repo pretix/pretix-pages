@@ -3,6 +3,7 @@ from django import forms
 from django.contrib import messages
 from django.db import transaction
 from django.http import Http404, HttpResponseRedirect
+from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.utils.translation import ugettext_lazy as _
@@ -10,7 +11,7 @@ from django.views.generic import (
     CreateView, DeleteView, ListView, TemplateView, UpdateView,
 )
 from pretix.base.forms import I18nModelForm
-from pretix.control.permissions import EventPermissionRequiredMixin
+from pretix.control.permissions import EventPermissionRequiredMixin, event_permission_required
 from pretix.presale.utils import event_view
 
 from .models import Page
@@ -25,6 +26,50 @@ class PageList(EventPermissionRequiredMixin, ListView):
 
     def get_queryset(self):
         return Page.objects.filter(event=self.request.event)
+
+
+def page_move(request, page, up=True):
+    """
+    This is a helper function to avoid duplicating code in page_move_up and
+    page_move_down. It takes a page and a direction and then tries to bring
+    all pages for this event in a new order.
+    """
+    try:
+        page = request.event.page_set.get(
+            id=page
+        )
+    except Page.DoesNotExist:
+        raise Http404(_("The requested page does not exist."))
+    pages = list(request.event.page_set.order_by("position", "title"))
+
+    index = pages.index(page)
+    print(index, up)
+    if index != 0 and up:
+        pages[index - 1], pages[index] = pages[index], pages[index - 1]
+    elif index != len(pages) - 1 and not up:
+        pages[index + 1], pages[index] = pages[index], pages[index + 1]
+
+    for i, p in enumerate(pages):
+        if p.position != i:
+            p.position = i
+            p.save()
+    messages.success(request, _('The order of pages has been updated.'))
+
+
+@event_permission_required("can_change_event_settings")
+def page_move_up(request, organizer, event, page):
+    page_move(request, page, up=True)
+    return redirect('plugins:pretix_pages:index',
+                    organizer=request.event.organizer.slug,
+                    event=request.event.slug)
+
+
+@event_permission_required("can_change_event_settings")
+def page_move_down(request, organizer, event, page):
+    page_move(request, page, up=False)
+    return redirect('plugins:pretix_pages:index',
+                    organizer=request.event.organizer.slug,
+                    event=request.event.slug)
 
 
 class PageForm(I18nModelForm):
