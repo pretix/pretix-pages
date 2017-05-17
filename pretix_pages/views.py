@@ -2,6 +2,7 @@ import bleach
 from django import forms
 from django.contrib import messages
 from django.db import transaction
+from django.db.models import Max
 from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import redirect
 from django.urls import reverse
@@ -209,6 +210,8 @@ class PageCreate(EventPermissionRequiredMixin, PageEditorMixin, CreateView):
     @transaction.atomic
     def form_valid(self, form):
         form.instance.event = self.request.event
+        form.instance.event = self.request.event
+        form.instance.position = (self.request.event.page_set.aggregate(p=Max('position'))['p'] or 0) + 1
         messages.success(self.request, _('The new page has been created.'))
         ret = super().form_valid(form)
         form.instance.log_action('pretix_pages.page.added', data=dict(form.cleaned_data),
