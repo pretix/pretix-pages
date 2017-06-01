@@ -12,7 +12,7 @@ pypi:
     tags:
         - python3
     only:
-        - release
+        - pypi
     artifacts:
         paths:
             - src/dist/
