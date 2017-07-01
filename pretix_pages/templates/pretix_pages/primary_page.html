@@ -1,0 +1,11 @@
+{% load i18n %}
+{% load bootstrap3 %}
+
+{% block content %}
+
+    <h2>{{ page.title }}</h2>
+    <div class="ql-content">
+        {{ page.text|safe }}
+    </div>
+
+{% endblock %}

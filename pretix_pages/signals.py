@@ -65,6 +65,13 @@ def footer_link_pages(sender, request=None, **kwargs):
 
 @receiver(signal=front_page_bottom, dispatch_uid="pages_frontpage_linls")
 def pretixpresale_front_page_bottom(sender, **kwargs):
+    primary_pages = list(Page.objects.filter(event=sender, is_primary=True))
+    if primary_pages:
+        template = get_template('pretix_pages/primary_page.html')
+        return template.render({
+            'event': sender,
+            'page': primary_pages[0]
+        })
     pages = list(Page.objects.filter(event=sender, link_on_frontpage=True))
     if pages:
         template = get_template('pretix_pages/front_page.html')
