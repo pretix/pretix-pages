@@ -26,6 +26,8 @@ class Page(LoggedModel):
     require_confirmation = models.BooleanField(default=False,
                                                verbose_name=_('Require the user to acknowledge this page before an '
                                                               'order is created (e.g. for terms of service).'))
+    is_primary = models.BooleanField(default=False, verbose_name=_('Show this page on the frontpage directly, '
+                                                                   'ignoring other pages.'))
 
     class Meta:
         ordering = ['position', 'title']
