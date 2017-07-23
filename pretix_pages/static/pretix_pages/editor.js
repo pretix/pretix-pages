@@ -9,6 +9,9 @@ $(function () {
             var title = $('input[id^=id_title_]').filter(function () {
                 return !!this.value;
             }).first().val();  // First non-empty language
+            if (typeof title === "undefined") {
+                return;
+            }
             var slug = title.toLowerCase()
                 .replace(/\s+/g, '-')
                 .replace(/[^\w\-]+/g, '')
@@ -49,7 +52,7 @@ $(function () {
         });
     });
 
-    $('form:first').submit(function () {
+    $('.editor').closest('form').submit(function () {
         $('.editor').each(function () {
             var val = $(this).find('.ql-editor').html();
             $("textarea[name^=text_][lang=" + $(this).attr("data-lng") + "]").val(val);
