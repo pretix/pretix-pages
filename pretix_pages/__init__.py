@@ -12,7 +12,7 @@ class PluginApp(AppConfig):
         description = _('Allows you to add static pages to your event site, for example for a FAQ, '
                         'terms of service, etc.')
         visible = True
-        version = '1.2.0'
+        version = '1.2.1'
 
     def ready(self):
         from . import signals  # NOQA
