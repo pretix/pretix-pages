@@ -53,25 +53,39 @@ def pretixcontrol_logentry_display(sender, logentry, **kwargs):
 
 @receiver(footer_link, dispatch_uid="pages_footer_links")
 def footer_link_pages(sender, request=None, **kwargs):
-    return [
-        {
-            'label': p.title,
-            'url': eventreverse(sender, 'plugins:pretix_pages:show', kwargs={
-                'slug': p.slug
-            })
-        } for p in Page.objects.filter(event=sender, link_in_footer=True)
-    ]
+    cache = sender.get_cache()
+    cached = cache.get('pages_footer_links')
+    if not cached:
+        cached = [
+            {
+                'label': p.title,
+                'url': eventreverse(sender, 'plugins:pretix_pages:show', kwargs={
+                    'slug': p.slug
+                })
+            } for p in Page.objects.filter(event=sender, link_in_footer=True)
+        ]
+        cache.set('pages_footer_links', cached)
+
+    return cached
 
 
-@receiver(signal=front_page_bottom, dispatch_uid="pages_frontpage_linls")
+@receiver(signal=front_page_bottom, dispatch_uid="pages_frontpage_links")
 def pretixpresale_front_page_bottom(sender, **kwargs):
-    pages = list(Page.objects.filter(event=sender, link_on_frontpage=True))
-    if pages:
-        template = get_template('pretix_pages/front_page.html')
-        return template.render({
-            'event': sender,
-            'pages': pages
-        })
+    cache = sender.get_cache()
+    cached = cache.get('pages_frontpage_links')
+    if cached is None:
+        pages = list(Page.objects.filter(event=sender, link_on_frontpage=True))
+        if pages:
+            template = get_template('pretix_pages/front_page.html')
+            cached = template.render({
+                'event': sender,
+                'pages': pages
+            })
+        else:
+            cached = ""
+        cache.set('pages_frontpage_links', cached)
+
+    return cached
 
 
 @receiver(html_head, dispatch_uid="pages_html_head")

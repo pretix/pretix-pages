@@ -54,6 +54,8 @@ def page_move(request, page, up=True):
         if p.position != i:
             p.position = i
             p.save()
+
+    request.event.get_cache().clear()
     messages.success(request, _('The order of pages has been updated.'))
 
 
@@ -132,6 +134,7 @@ class PageDelete(EventPermissionRequiredMixin, PageDetailMixin, DeleteView):
         self.object.log_action('pretix_pages.page.deleted', user=self.request.user)
         self.object.delete()
         messages.success(request, _('The selected page has been deleted.'))
+        self.request.event.get_cache().clear()
         return HttpResponseRedirect(self.get_success_url())
 
 
@@ -180,6 +183,7 @@ class PageUpdate(EventPermissionRequiredMixin, PageDetailMixin, PageEditorMixin,
                     k: form.cleaned_data.get(k) for k in form.changed_data
                 }
             )
+        self.request.event.get_cache().clear()
         return super().form_valid(form)
 
     def form_invalid(self, form):
@@ -216,6 +220,7 @@ class PageCreate(EventPermissionRequiredMixin, PageEditorMixin, CreateView):
         ret = super().form_valid(form)
         form.instance.log_action('pretix_pages.page.added', data=dict(form.cleaned_data),
                                  user=self.request.user)
+        self.request.event.get_cache().clear()
         return ret
 
     def form_invalid(self, form):
@@ -223,7 +228,6 @@ class PageCreate(EventPermissionRequiredMixin, PageEditorMixin, CreateView):
         return super().form_invalid(form)
 
 
-@method_decorator(event_view, name='dispatch')
 class ShowPageView(TemplateView):
     template_name = 'pretix_pages/show.html'
 
