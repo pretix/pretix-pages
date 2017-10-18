@@ -53,8 +53,7 @@ def pretixcontrol_logentry_display(sender, logentry, **kwargs):
 
 @receiver(footer_link, dispatch_uid="pages_footer_links")
 def footer_link_pages(sender, request=None, **kwargs):
-    cache = sender.get_cache()
-    cached = cache.get('pages_footer_links')
+    cached = sender.cache.get('pages_footer_links')
     if not cached:
         cached = [
             {
@@ -64,15 +63,14 @@ def footer_link_pages(sender, request=None, **kwargs):
                 })
             } for p in Page.objects.filter(event=sender, link_in_footer=True)
         ]
-        cache.set('pages_footer_links', cached)
+        sender.cache.set('pages_footer_links', cached)
 
     return cached
 
 
 @receiver(signal=front_page_bottom, dispatch_uid="pages_frontpage_links")
 def pretixpresale_front_page_bottom(sender, **kwargs):
-    cache = sender.get_cache()
-    cached = cache.get('pages_frontpage_links')
+    cached = sender.cache.get('pages_frontpage_links')
     if cached is None:
         pages = list(Page.objects.filter(event=sender, link_on_frontpage=True))
         if pages:
@@ -83,7 +81,7 @@ def pretixpresale_front_page_bottom(sender, **kwargs):
             })
         else:
             cached = ""
-        cache.set('pages_frontpage_links', cached)
+        sender.cache.set('pages_frontpage_links', cached)
 
     return cached
 
@@ -110,19 +108,23 @@ def html_head_presale(sender, request=None, **kwargs):
 
 @receiver(checkout_confirm_messages, dispatch_uid="pages_confirm_messages")
 def confirm_messages(sender, *args, **kwargs):
-    pages = list(Page.objects.filter(event=sender, require_confirmation=True))
-    if not pages:
-        return {}
-
-    return {
-        'pages': _('I have read and agree with the content of the following pages: {plist}').format(
-            plist=', '.join([
-                '<a href="{url}" target="_blank">{title}</a>'.format(
-                    title=str(p.title),
-                    url=eventreverse(sender, 'plugins:pretix_pages:show', kwargs={
-                        'slug': p.slug
-                    })
-                ) for p in pages
-            ])
-        )
-    }
+    cached = sender.cache.get('pages_confirm_messages')
+    if cached is None:
+        pages = list(Page.objects.filter(event=sender, require_confirmation=True))
+        if pages:
+            cached = {
+                'pages': _('I have read and agree with the content of the following pages: {plist}').format(
+                    plist=', '.join([
+                        '<a href="{url}" target="_blank">{title}</a>'.format(
+                            title=str(p.title),
+                            url=eventreverse(sender, 'plugins:pretix_pages:show', kwargs={
+                                'slug': p.slug
+                            })
+                        ) for p in pages
+                    ])
+                )
+            }
+        else:
+            cached = {}
+        sender.cache.set('pages_confirm_messages', cached)
+    return cached
