@@ -6,7 +6,7 @@ from pretix.base.models import LoggedModel
 
 
 class Page(LoggedModel):
-    event = models.ForeignKey('pretixbase.Event')
+    event = models.ForeignKey('pretixbase.Event', on_delete=models.CASCADE)
     slug = models.CharField(
         max_length=150, db_index=True, verbose_name=_('URL form'),
         validators=[
