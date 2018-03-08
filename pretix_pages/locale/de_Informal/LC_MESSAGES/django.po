@@ -3,14 +3,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-06 16:54+0100\n"
-"PO-Revision-Date: \n"
+"PO-Revision-Date: 2018-03-08 17:04+0000\n"
 "Last-Translator: Raphael Michel <michel@rami.io>\n"
-"Language-Team: \n"
-"Language: de\n"
+"Language-Team: German (informal) <https://translate.pretix.eu/projects/pretix"
+"/pretix-plugin-pages/de_Informal/>\n"
+"Language: de_Informal\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.19.1\n"
 
 #: pretix_pages/__init__.py:10 pretix_pages/signals.py:22
 #: pretix_pages/templates/pretix_pages/index.html:6
@@ -146,10 +148,8 @@ msgid "The requested page does not exist."
 msgstr "Die gesuchte Seite existiert nicht."
 
 #: pretix_pages/views.py:59
-#, fuzzy
-#| msgid "The new page has been created."
 msgid "The order of pages has been updated."
-msgstr "Die neue Seite wurde erstellt."
+msgstr "Die Reihenfolge der Seiten wurde gespeichert."
 
 #: pretix_pages/views.py:94
 msgid "You already have a page on that URL."
