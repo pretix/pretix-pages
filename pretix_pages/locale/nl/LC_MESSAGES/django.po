@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-06 16:54+0100\n"
-"PO-Revision-Date: 2018-04-06 22:00+0000\n"
-"Last-Translator: Pieter Roziers <pieter@trippeltwiejenul.be>\n"
+"PO-Revision-Date: 2018-04-07 19:00+0000\n"
+"Last-Translator: Maarten van den Berg <maartenberg1@gmail.com>\n"
 "Language-Team: Dutch <https://translate.pretix.eu/projects/pretix/pretix-"
 "plugin-pages/nl/>\n"
 "Language: nl\n"
@@ -158,7 +158,7 @@ msgstr "Jouw bewerkingen werden opgeslagen."
 
 #: pretix_pages/views.py:190 pretix_pages/views.py:227
 msgid "We could not save your changes. See below for details."
-msgstr ""
+msgstr "We konden uw wijzigingen niet opslaan. Zie hieronder voor details."
 
 #: pretix_pages/views.py:219
 msgid "The new page has been created."
