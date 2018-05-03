@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-06 16:54+0100\n"
-"PO-Revision-Date: 2018-04-15 16:30+0000\n"
+"PO-Revision-Date: 2018-05-03 17:00+0000\n"
 "Last-Translator: Maarten van den Berg <maartenberg1@gmail.com>\n"
 "Language-Team: Dutch <https://translate.pretix.eu/projects/pretix/pretix-"
 "plugin-pages/nl/>\n"
@@ -164,7 +164,7 @@ msgstr "De gekozen pagina is verwijderd."
 
 #: pretix_pages/views.py:179
 msgid "Your changes have been saved."
-msgstr "Jouw bewerkingen werden opgeslagen."
+msgstr "Uw bewerkingen zijn opgeslagen."
 
 #: pretix_pages/views.py:190 pretix_pages/views.py:227
 msgid "We could not save your changes. See below for details."
