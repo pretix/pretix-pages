@@ -1,13 +1,18 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-06 16:54+0100\n"
-"PO-Revision-Date: 2018-03-19 11:01+0000\n"
-"Last-Translator: Felix Rindt <felix@rindt.me>\n"
-"Language-Team: German <https://translate.pretix.eu/projects/pretix/pretix-"
-"plugin-pages/de/>\n"
-"Language: de\n"
+"PO-Revision-Date: 2018-03-19 11:00+0000\n"
+"Last-Translator: Mikkel Ricky <rimi@aarhus.dk>\n"
+"Language-Team: Danish <https://translate.pretix.eu/projects/pretix/pretix-"
+"plugin-pages/da/>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,157 +23,144 @@ msgstr ""
 #: pretix_pages/templates/pretix_pages/index.html:6
 #: pretix_pages/templates/pretix_pages/index.html:8
 msgid "Pages"
-msgstr "Seiten"
+msgstr "Sider"
 
 #: pretix_pages/__init__.py:12
 msgid ""
 "Allows you to add static pages to your event site, for example for a FAQ, "
 "terms of service, etc."
 msgstr ""
-"Erlaubt Ihnen, statische Seiten zu Ihrer Veranstaltungsseite hinzuzufügen, "
-"wie z.B. FAQ, Teilnehmerbedingungen, etc."
 
 #: pretix_pages/models.py:11 pretix_pages/views.py:101
 msgid "URL form"
-msgstr "URL-Version"
+msgstr ""
 
 #: pretix_pages/models.py:15
 msgid "The slug may only contain letters, numbers, dots and dashes."
 msgstr ""
-"Die Kurzform darf nur Buchstaben, Zahlen, Punkte und Bindestriche enthalten."
+"Den korte url må kun indeholder bogstaver, tal, punktummer og bindestreger."
 
 #: pretix_pages/models.py:18
 msgid ""
 "This will be used to generate the URL of the page. Please only use latin "
 "letters, numbers, dots and dashes. You cannot change this afterwards."
 msgstr ""
-"Dies wird benutzt, um die URL der Seite zu generieren. Bitte verwenden Sie "
-"nur lateinische Buchstaben, Zahlen, Punkte und Bindestriche. Sie können "
-"diesen Wert nicht mehr ändern."
 
 #: pretix_pages/models.py:22 pretix_pages/templates/pretix_pages/index.html:29
 msgid "Page title"
-msgstr "Seitentitel"
+msgstr "Sidetitel"
 
 #: pretix_pages/models.py:23 pretix_pages/templates/pretix_pages/form.html:22
 msgid "Page content"
-msgstr "Seiteninhalt"
+msgstr "Sideindhold"
 
 #: pretix_pages/models.py:24
 msgid "Show link on the event start page"
-msgstr "Link auf der Startseite anzeigen"
+msgstr ""
 
 #: pretix_pages/models.py:25
 msgid "Show link in the event footer"
-msgstr "Link in der Fußzeile anzeigen"
+msgstr ""
 
 #: pretix_pages/models.py:27
 msgid ""
 "Require the user to acknowledge this page before an order is created (e.g. "
 "for terms of service)."
 msgstr ""
-"Die Inhalte dieser Seite müssen vom Benutzer akzeptiert werden, um eine "
-"Bestellung abzuschicken (z.B. für Teilnahmebedingungen)."
 
 #: pretix_pages/signals.py:45
 msgid "The page has been created."
-msgstr "Die Seite wurde erstellt."
+msgstr "Siden er blevet oprettet."
 
 #: pretix_pages/signals.py:46
 msgid "The page has been modified."
-msgstr "Die Seite wurde verändert."
+msgstr "Siden er blevet ændret."
 
 #: pretix_pages/signals.py:47
 msgid "The page has been deleted."
-msgstr "Die Seite wurde gelöscht"
+msgstr "Siden er blevet slettet."
 
 #: pretix_pages/signals.py:116
 #, python-brace-format
 msgid "I have read and agree with the content of the following pages: {plist}"
 msgstr ""
-"Ich habe die Inhalte der folgenden Seiten gelesen und stimme ihnen zu: "
-"{plist}"
 
 #: pretix_pages/templates/pretix_pages/delete.html:4
 #: pretix_pages/templates/pretix_pages/delete.html:6
 msgid "Delete a page"
-msgstr "Seite löschen"
+msgstr "Slet en side"
 
 #: pretix_pages/templates/pretix_pages/delete.html:9
 #, python-format
 msgid "Are you sure you want to delete the page <strong>%(name)s</strong>?"
-msgstr ""
-"Sind Sie sicher, dass Sie die Seite <strong>%(name)s</strong> löschen "
-"möchten?"
+msgstr "Er du sikker på at du vil slette siden <strong>%(name)s</strong>?"
 
 #: pretix_pages/templates/pretix_pages/delete.html:14
 msgid "Cancel"
-msgstr "Abbrechen"
+msgstr "Annuller"
 
 #: pretix_pages/templates/pretix_pages/delete.html:17
 msgid "Delete"
-msgstr "Löschen"
+msgstr "Slet"
 
 #: pretix_pages/templates/pretix_pages/form.html:5
 #: pretix_pages/templates/pretix_pages/form.html:7
 msgid "Page"
-msgstr "Seite"
+msgstr "Side"
 
 #: pretix_pages/templates/pretix_pages/form.html:14
 msgid "General information"
-msgstr "Allgemeine Informationen"
+msgstr "Generel information"
 
 #: pretix_pages/templates/pretix_pages/form.html:25
 msgid "Please enable JavaScript"
-msgstr "Bitte JavaScript aktivieren"
+msgstr "Aktiver venligst JavaScript"
 
 #: pretix_pages/templates/pretix_pages/form.html:53
 msgid "Save"
-msgstr "Speichern"
+msgstr "Gem"
 
 #: pretix_pages/templates/pretix_pages/form.html:62
 msgid "Page history"
-msgstr "Seiten-Verlauf"
+msgstr "Sidehistorik"
 
 #: pretix_pages/templates/pretix_pages/front_page.html:4
 msgid "More information"
-msgstr "Mehr Informationen"
+msgstr "Flere oplysninger"
 
 #: pretix_pages/templates/pretix_pages/index.html:12
 msgid "You haven't created any pages yet."
-msgstr "Sie haben noch keine Seiten erstellt."
+msgstr ""
 
 #: pretix_pages/templates/pretix_pages/index.html:18
 #: pretix_pages/templates/pretix_pages/index.html:22
 msgid "Create a new page"
-msgstr "Neue Seite erstellen"
+msgstr "Opret ny side"
 
 #: pretix_pages/views.py:43 pretix_pages/views.py:115 pretix_pages/views.py:241
 msgid "The requested page does not exist."
-msgstr "Die gesuchte Seite existiert nicht."
+msgstr ""
 
 #: pretix_pages/views.py:59
 msgid "The order of pages has been updated."
-msgstr "Die Reihenfolge der Seiten wurde gespeichert."
+msgstr "Rækkefølgen af sider er blevet opdateret."
 
 #: pretix_pages/views.py:94
 msgid "You already have a page on that URL."
-msgstr "Sie haben bereits eine Seite mit dieser URL."
+msgstr "Du har allerede en side på den url."
 
 #: pretix_pages/views.py:136
 msgid "The selected page has been deleted."
-msgstr "Die Seite wurde gelöscht."
+msgstr "Den valgte side er blevet slettet."
 
 #: pretix_pages/views.py:179
 msgid "Your changes have been saved."
-msgstr "Ihre Änderungen wurden gespeichert."
+msgstr "Dine ændringer er blevet gemt."
 
 #: pretix_pages/views.py:190 pretix_pages/views.py:227
 msgid "We could not save your changes. See below for details."
-msgstr ""
-"Die Änderungen konnten nicht gespeichert werden. Die fehlerhaften Felder "
-"sind farblich markiert."
+msgstr "Vi kunne ikke gemme dine ændringer. Se detaljer nedenfor."
 
 #: pretix_pages/views.py:219
 msgid "The new page has been created."
-msgstr "Die neue Seite wurde erstellt."
+msgstr "Den nye side er blevet oprettet."
