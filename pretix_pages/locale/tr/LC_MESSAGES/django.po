@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-06 16:54+0100\n"
-"PO-Revision-Date: 2018-07-17 22:00+0000\n"
+"PO-Revision-Date: 2018-07-18 19:00+0000\n"
 "Last-Translator: Yunus Fırat Pişkin <firat.piskin@idvlabs.com>\n"
 "Language-Team: Turkish <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-pages/tr/>\n"
@@ -26,13 +26,12 @@ msgid "Pages"
 msgstr "Sayfalar"
 
 #: pretix_pages/__init__.py:12
-#, fuzzy
 msgid ""
 "Allows you to add static pages to your event site, for example for a FAQ, "
 "terms of service, etc."
 msgstr ""
-"Etkinlik sitenize statik sayfalar eklemenizi sağlar.Örneğin FAQ için, hizmet "
-"şartları vb."
+"Etkinlik sitenize, örneğin SSS, hizmet şartları vb. Için statik sayfalar "
+"eklemenizi sağlar."
 
 #: pretix_pages/models.py:11 pretix_pages/views.py:101
 msgid "URL form"
@@ -40,7 +39,7 @@ msgstr "URL formu"
 
 #: pretix_pages/models.py:15
 msgid "The slug may only contain letters, numbers, dots and dashes."
-msgstr ""
+msgstr "Dizi sadece harf, sayı, nokta ve tire içerebilir."
 
 #: pretix_pages/models.py:18
 msgid ""
@@ -125,7 +124,7 @@ msgstr "Lütfen JavaScript'i etkinleştirin"
 
 #: pretix_pages/templates/pretix_pages/form.html:53
 msgid "Save"
-msgstr "Kayıt et"
+msgstr "Kaydet"
 
 #: pretix_pages/templates/pretix_pages/form.html:62
 msgid "Page history"
@@ -162,7 +161,7 @@ msgstr "Seçilen sayfa silindi."
 
 #: pretix_pages/views.py:179
 msgid "Your changes have been saved."
-msgstr "Değişiklikler kaydedildi."
+msgstr "Değişiklikleriniz kaydedildi."
 
 #: pretix_pages/views.py:190 pretix_pages/views.py:227
 msgid "We could not save your changes. See below for details."
