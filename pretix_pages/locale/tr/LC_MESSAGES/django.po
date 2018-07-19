@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-06 16:54+0100\n"
-"PO-Revision-Date: 2018-07-18 19:00+0000\n"
+"PO-Revision-Date: 2018-07-19 20:00+0000\n"
 "Last-Translator: Yunus Fırat Pişkin <firat.piskin@idvlabs.com>\n"
 "Language-Team: Turkish <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-pages/tr/>\n"
@@ -39,7 +39,7 @@ msgstr "URL formu"
 
 #: pretix_pages/models.py:15
 msgid "The slug may only contain letters, numbers, dots and dashes."
-msgstr "Dizi sadece harf, sayı, nokta ve tire içerebilir."
+msgstr "Bu dizi sadece harf, sayı, nokta ve tire içerebilir."
 
 #: pretix_pages/models.py:18
 msgid ""
