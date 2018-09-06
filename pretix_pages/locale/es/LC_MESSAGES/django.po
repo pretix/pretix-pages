@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-11 17:26+0200\n"
-"PO-Revision-Date: 2018-08-25 16:00+0000\n"
+"POT-Creation-Date: 2018-03-06 16:54+0100\n"
+"PO-Revision-Date: 2018-09-11 15:24+0000\n"
 "Last-Translator: oocf <oswaldocerna@gmail.com>\n"
 "Language-Team: Spanish <https://translate.pretix.eu/projects/pretix/pretix-"
 "plugin-pages/es/>\n"
@@ -39,13 +39,15 @@ msgstr "Formulario de URL"
 
 #: pretix_pages/models.py:15
 msgid "The slug may only contain letters, numbers, dots and dashes."
-msgstr ""
+msgstr "La ficha solo puede contener letras, números, puntos y guiones."
 
 #: pretix_pages/models.py:18
 msgid ""
 "This will be used to generate the URL of the page. Please only use latin "
 "letters, numbers, dots and dashes. You cannot change this afterwards."
 msgstr ""
+"Esto será usado para generar la URL de la página. Por favor solo use letras, "
+"números, puntos y guiones. No lo puedes cambiar después."
 
 #: pretix_pages/models.py:22 pretix_pages/templates/pretix_pages/index.html:29
 msgid "Page title"
@@ -68,6 +70,8 @@ msgid ""
 "Require the user to acknowledge this page before an order is created (e.g. "
 "for terms of service)."
 msgstr ""
+"Se requiere que el usuario acepte antes de que una orden sea creada (por "
+"ejemplo para términos de servicio)."
 
 #: pretix_pages/signals.py:45
 msgid "The page has been created."
