@@ -14,7 +14,8 @@ from .models import Page
 
 @receiver(nav_event, dispatch_uid="pages_nav")
 def control_nav_pages(sender, request=None, **kwargs):
-    if not request.user.has_event_permission(request.organizer, request.event, 'can_change_event_settings'):
+    if not request.user.has_event_permission(request.organizer, request.event, 'can_change_event_settings',
+                                             request=request):
         return []
     url = resolve(request.path_info)
     return [
