@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-11 17:26+0200\n"
+"POT-Creation-Date: 2018-12-06 10:11+0100\n"
 "PO-Revision-Date: 2018-03-08 17:04+0000\n"
 "Last-Translator: Raphael Michel <michel@rami.io>\n"
 "Language-Team: German (informal) <https://translate.pretix.eu/projects/"
@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.19.1\n"
 
-#: pretix_pages/__init__.py:10 pretix_pages/signals.py:22
+#: pretix_pages/__init__.py:10 pretix_pages/signals.py:23
 #: pretix_pages/templates/pretix_pages/index.html:6
 #: pretix_pages/templates/pretix_pages/index.html:8
 msgid "Pages"
@@ -71,19 +71,19 @@ msgstr ""
 "Die Inhalte dieser Seite müssen vom Benutzer akzeptiert werden, um eine "
 "Bestellung abzuschicken (z.B. für Teilnahmebedingungen)."
 
-#: pretix_pages/signals.py:45
+#: pretix_pages/signals.py:46
 msgid "The page has been created."
 msgstr "Die Seite wurde erstellt."
 
-#: pretix_pages/signals.py:46
+#: pretix_pages/signals.py:47
 msgid "The page has been modified."
 msgstr "Die Seite wurde verändert."
 
-#: pretix_pages/signals.py:47
+#: pretix_pages/signals.py:48
 msgid "The page has been deleted."
 msgstr "Die Seite wurde gelöscht"
 
-#: pretix_pages/signals.py:116
+#: pretix_pages/signals.py:117
 #, python-brace-format
 msgid "I have read and agree with the content of the following pages: {plist}"
 msgstr ""
