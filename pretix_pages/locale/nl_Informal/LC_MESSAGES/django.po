@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: 2019-01-02 13:14+0000\n"
+"PO-Revision-Date: 2019-01-02 13:15+0000\n"
 "Last-Translator: Maarten van den Berg <maartenberg1@gmail.com>\n"
 "Language-Team: Dutch (informal) <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-pages/nl_Informal/>\n"
@@ -23,17 +23,19 @@ msgstr ""
 #: pretix_pages/templates/pretix_pages/index.html:6
 #: pretix_pages/templates/pretix_pages/index.html:8
 msgid "Pages"
-msgstr ""
+msgstr "Pagina's"
 
 #: pretix_pages/__init__.py:12
 msgid ""
 "Allows you to add static pages to your event site, for example for a FAQ, "
 "terms of service, etc."
 msgstr ""
+"Staat je toe om statische pagina's aan je evenementswebsite toe te voegen, "
+"bijvoorbeeld voor een FAQ, algemene voorwaarden, etc."
 
 #: pretix_pages/models.py:11 pretix_pages/views.py:101
 msgid "URL form"
-msgstr ""
+msgstr "URL-formaat"
 
 #: pretix_pages/models.py:15
 msgid "The slug may only contain letters, numbers, dots and dashes."
@@ -44,55 +46,63 @@ msgid ""
 "This will be used to generate the URL of the page. Please only use latin "
 "letters, numbers, dots and dashes. You cannot change this afterwards."
 msgstr ""
+"Dit zal worden gebruikt om de URL van deze pagina te genereren. Gebruik "
+"alleen Latijnse letters, getallen, punten en strepen. Je kan dit achteraf "
+"niet meer veranderen."
 
 #: pretix_pages/models.py:22 pretix_pages/templates/pretix_pages/index.html:29
 msgid "Page title"
-msgstr ""
+msgstr "Paginatitel"
 
 #: pretix_pages/models.py:23 pretix_pages/templates/pretix_pages/form.html:22
 msgid "Page content"
-msgstr ""
+msgstr "Paginainhoud"
 
 #: pretix_pages/models.py:24
 msgid "Show link on the event start page"
-msgstr ""
+msgstr "Toon link op de startpagina van het evenement"
 
 #: pretix_pages/models.py:25
 msgid "Show link in the event footer"
-msgstr ""
+msgstr "Toon link in de footer van het evenement"
 
 #: pretix_pages/models.py:27
 msgid ""
 "Require the user to acknowledge this page before an order is created (e.g. "
 "for terms of service)."
 msgstr ""
+"Verplicht de gebruiker om akkoord te gaan met deze pagina voordat een "
+"bestelling wordt geplaatst (bijvoorbeeld voor algemene voorwaarden)."
 
 #: pretix_pages/signals.py:46
 msgid "The page has been created."
-msgstr ""
+msgstr "De pagina is aangemaakt."
 
 #: pretix_pages/signals.py:47
 msgid "The page has been modified."
-msgstr ""
+msgstr "De pagina is aangepast."
 
 #: pretix_pages/signals.py:48
 msgid "The page has been deleted."
-msgstr ""
+msgstr "De pagina is verwijderd."
 
 #: pretix_pages/signals.py:117
 #, python-brace-format
 msgid "I have read and agree with the content of the following pages: {plist}"
 msgstr ""
+"Ik heb de inhoud van de volgende pagina's gelezen en ga ermee akkoord: "
+"{plist}"
 
 #: pretix_pages/templates/pretix_pages/delete.html:4
 #: pretix_pages/templates/pretix_pages/delete.html:6
 msgid "Delete a page"
-msgstr ""
+msgstr "Verwijder een pagina"
 
 #: pretix_pages/templates/pretix_pages/delete.html:9
 #, python-format
 msgid "Are you sure you want to delete the page <strong>%(name)s</strong>?"
 msgstr ""
+"Weet je zeker dat je de pagina <strong>%(name)s</strong> wilt verwijderen?"
 
 #: pretix_pages/templates/pretix_pages/delete.html:14
 msgid "Cancel"
@@ -105,7 +115,7 @@ msgstr "Verwijderen"
 #: pretix_pages/templates/pretix_pages/form.html:5
 #: pretix_pages/templates/pretix_pages/form.html:7
 msgid "Page"
-msgstr ""
+msgstr "Pagina"
 
 #: pretix_pages/templates/pretix_pages/form.html:14
 msgid "General information"
@@ -113,7 +123,7 @@ msgstr "Algemene informatie"
 
 #: pretix_pages/templates/pretix_pages/form.html:25
 msgid "Please enable JavaScript"
-msgstr ""
+msgstr "Zet JavaScript aan"
 
 #: pretix_pages/templates/pretix_pages/form.html:53
 msgid "Save"
@@ -121,36 +131,36 @@ msgstr "Opslaan"
 
 #: pretix_pages/templates/pretix_pages/form.html:62
 msgid "Page history"
-msgstr ""
+msgstr "Paginageschiedenis"
 
 #: pretix_pages/templates/pretix_pages/front_page.html:4
 msgid "More information"
-msgstr ""
+msgstr "Meer informatie"
 
 #: pretix_pages/templates/pretix_pages/index.html:12
 msgid "You haven't created any pages yet."
-msgstr ""
+msgstr "Je hebt nog geen pagina's aangemaakt."
 
 #: pretix_pages/templates/pretix_pages/index.html:18
 #: pretix_pages/templates/pretix_pages/index.html:22
 msgid "Create a new page"
-msgstr ""
+msgstr "Maak een nieuwe pagina aan"
 
 #: pretix_pages/views.py:43 pretix_pages/views.py:115 pretix_pages/views.py:241
 msgid "The requested page does not exist."
-msgstr ""
+msgstr "De gevraagde pagina bestaat niet."
 
 #: pretix_pages/views.py:59
 msgid "The order of pages has been updated."
-msgstr ""
+msgstr "De volgorde van pagina's is bijgewerkt."
 
 #: pretix_pages/views.py:94
 msgid "You already have a page on that URL."
-msgstr ""
+msgstr "Je hebt al een pagina op die URL."
 
 #: pretix_pages/views.py:136
 msgid "The selected page has been deleted."
-msgstr ""
+msgstr "De gekozen pagina is verwijderd."
 
 #: pretix_pages/views.py:179
 msgid "Your changes have been saved."
@@ -162,4 +172,4 @@ msgstr "We konden je wijzigingen niet opslaan. Zie hieronder voor details."
 
 #: pretix_pages/views.py:219
 msgid "The new page has been created."
-msgstr ""
+msgstr "De nieuwe pagina is aangemaakt."
