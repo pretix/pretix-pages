@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: 2018-09-11 15:24+0000\n"
-"Last-Translator: oocf <oswaldocerna@gmail.com>\n"
-"Language-Team: Spanish <https://translate.pretix.eu/projects/pretix/pretix-"
-"plugin-pages/es/>\n"
+"PO-Revision-Date: 2019-02-05 13:00+0000\n"
+"Last-Translator: Alvaro Enrique Ruano <alvaro.ruano90@outlook.com>\n"
+"Language-Team: Spanish <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-pages/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.1.1\n"
+"X-Generator: Weblate 3.4\n"
 
 #: pretix_pages/__init__.py:10 pretix_pages/signals.py:23
 #: pretix_pages/templates/pretix_pages/index.html:6
@@ -39,7 +39,7 @@ msgstr "Formulario de URL"
 
 #: pretix_pages/models.py:15
 msgid "The slug may only contain letters, numbers, dots and dashes."
-msgstr "La ficha solo puede contener letras, números, puntos y guiones."
+msgstr "La URL semántica solo puede contener letras, números, puntos y guiones."
 
 #: pretix_pages/models.py:18
 msgid ""
@@ -63,15 +63,15 @@ msgstr "Mostrar el vínculo en la página del evento"
 
 #: pretix_pages/models.py:25
 msgid "Show link in the event footer"
-msgstr "Mostrar el vínculo en el pie del evento"
+msgstr "Mostrar el vínculo en el pie de página del evento"
 
 #: pretix_pages/models.py:27
 msgid ""
 "Require the user to acknowledge this page before an order is created (e.g. "
 "for terms of service)."
 msgstr ""
-"Se requiere que el usuario acepte antes de que una orden sea creada (por "
-"ejemplo para términos de servicio)."
+"Se requiere que el usuario acepte esta página antes de que una orden sea "
+"creada (por ejemplo para términos de servicio)."
 
 #: pretix_pages/signals.py:46
 msgid "The page has been created."
@@ -149,7 +149,7 @@ msgstr "La página solicita no existe."
 
 #: pretix_pages/views.py:59
 msgid "The order of pages has been updated."
-msgstr "La orden de las páginas ha sido actualizada."
+msgstr "El orden de las páginas ha sido actualizado."
 
 #: pretix_pages/views.py:94
 msgid "You already have a page on that URL."
