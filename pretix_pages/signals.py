@@ -1,7 +1,7 @@
 from django.dispatch import receiver
 from django.template.loader import get_template
 from django.urls import resolve, reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, get_language
 from pretix.base.signals import logentry_display, event_copy_data
 from pretix.control.signals import html_head, nav_event
 from pretix.multidomain.urlreverse import eventreverse
@@ -54,7 +54,7 @@ def pretixcontrol_logentry_display(sender, logentry, **kwargs):
 
 @receiver(footer_link, dispatch_uid="pages_footer_links")
 def footer_link_pages(sender, request=None, **kwargs):
-    cached = sender.cache.get('pages_footer_links')
+    cached = sender.cache.get('pages_footer_links_' + get_language())
     if not cached:
         cached = [
             {
@@ -64,14 +64,14 @@ def footer_link_pages(sender, request=None, **kwargs):
                 })
             } for p in Page.objects.filter(event=sender, link_in_footer=True)
         ]
-        sender.cache.set('pages_footer_links', cached)
+        sender.cache.set('pages_footer_links_ ' + get_language(), cached)
 
     return cached
 
 
 @receiver(signal=front_page_bottom, dispatch_uid="pages_frontpage_links")
 def pretixpresale_front_page_bottom(sender, **kwargs):
-    cached = sender.cache.get('pages_frontpage_links')
+    cached = sender.cache.get('pages_frontpage_links_' + get_language())
     if cached is None:
         pages = list(Page.objects.filter(event=sender, link_on_frontpage=True))
         if pages:
@@ -82,7 +82,7 @@ def pretixpresale_front_page_bottom(sender, **kwargs):
             })
         else:
             cached = ""
-        sender.cache.set('pages_frontpage_links', cached)
+        sender.cache.set('pages_frontpage_links_' + get_language(), cached)
 
     return cached
 
@@ -109,7 +109,7 @@ def html_head_presale(sender, request=None, **kwargs):
 
 @receiver(checkout_confirm_messages, dispatch_uid="pages_confirm_messages")
 def confirm_messages(sender, *args, **kwargs):
-    cached = sender.cache.get('pages_confirm_messages')
+    cached = sender.cache.get('pages_confirm_messages_' + get_language())
     if cached is None:
         pages = list(Page.objects.filter(event=sender, require_confirmation=True))
         if pages:
@@ -127,5 +127,5 @@ def confirm_messages(sender, *args, **kwargs):
             }
         else:
             cached = {}
-        sender.cache.set('pages_confirm_messages', cached)
+        sender.cache.set('pages_confirm_messages_' + get_language(), cached)
     return cached
