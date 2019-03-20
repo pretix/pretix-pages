@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: 2019-03-09 16:00+0000\n"
+"PO-Revision-Date: 2019-03-20 11:00+0000\n"
 "Last-Translator: yichengsd <sunzl@jxepub.com>\n"
 "Language-Team: Chinese (Simplified) <https://translate.pretix.eu/projects/"
 "pretix/pretix-plugin-pages/zh_Hans/>\n"
@@ -109,7 +109,7 @@ msgstr ""
 
 #: pretix_pages/templates/pretix_pages/form.html:14
 msgid "General information"
-msgstr ""
+msgstr "一般信息"
 
 #: pretix_pages/templates/pretix_pages/form.html:25
 msgid "Please enable JavaScript"
@@ -158,7 +158,7 @@ msgstr "您的更改已保存。"
 
 #: pretix_pages/views.py:190 pretix_pages/views.py:227
 msgid "We could not save your changes. See below for details."
-msgstr ""
+msgstr "我们无法保存您的更改。详见下文。"
 
 #: pretix_pages/views.py:219
 msgid "The new page has been created."
