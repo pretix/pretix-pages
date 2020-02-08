@@ -9,6 +9,7 @@ class PluginApp(AppConfig):
     class PretixPluginMeta:
         name = _('Pages')
         author = 'Raphael Michel'
+        category = 'FEATURE'
         description = _('Allows you to add static pages to your event site, for example for a FAQ, '
                         'terms of service, etc.')
         visible = True
