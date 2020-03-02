@@ -44,7 +44,6 @@ def page_move(request, page, up=True):
     pages = list(request.event.page_set.order_by("position", "title"))
 
     index = pages.index(page)
-    print(index, up)
     if index != 0 and up:
         pages[index - 1], pages[index] = pages[index], pages[index - 1]
     elif index != len(pages) - 1 and not up:
