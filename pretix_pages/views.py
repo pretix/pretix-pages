@@ -7,7 +7,7 @@ from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.decorators import method_decorator
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.views.generic import (
     CreateView, DeleteView, ListView, TemplateView, UpdateView,
 )

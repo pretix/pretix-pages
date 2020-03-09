@@ -1,7 +1,7 @@
 from django.dispatch import receiver
 from django.template.loader import get_template
 from django.urls import resolve, reverse
-from django.utils.translation import ugettext_lazy as _, get_language
+from django.utils.translation import gettext_lazy as _, get_language
 from pretix.base.signals import logentry_display, event_copy_data
 from pretix.control.signals import html_head, nav_event
 from pretix.multidomain.urlreverse import eventreverse
