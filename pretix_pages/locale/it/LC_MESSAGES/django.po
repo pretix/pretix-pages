@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: 2020-06-15 12:39+0000\n"
+"PO-Revision-Date: 2020-06-16 18:00+0000\n"
 "Last-Translator: Frank <webappconcept@gmail.com>\n"
 "Language-Team: Italian <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-pages/it/>\n"
@@ -154,11 +154,11 @@ msgstr ""
 
 #: pretix_pages/views.py:179
 msgid "Your changes have been saved."
-msgstr ""
+msgstr "Le tue modifiche sono state salvate."
 
 #: pretix_pages/views.py:190 pretix_pages/views.py:227
 msgid "We could not save your changes. See below for details."
-msgstr ""
+msgstr "Non abbiamo potuto salvere le tue modifiche. Leggi i dettagli sotto."
 
 #: pretix_pages/views.py:219
 msgid "The new page has been created."
