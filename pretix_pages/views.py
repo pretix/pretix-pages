@@ -248,8 +248,10 @@ class ShowPageView(TemplateView):
         attributes['a'] = ['href', 'title', 'target']
         attributes['p'] = ['class']
         attributes['li'] = ['class']
+        attributes['img'] = ['src']
 
         ctx['content'] = bleach.clean(str(page.text), tags=bleach.ALLOWED_TAGS + [
+            'img',
             'p',
             'br',
             's',
@@ -260,5 +262,5 @@ class ShowPageView(TemplateView):
             'h4',
             'h5',
             'h6'
-        ], attributes=attributes)
+        ], attributes=attributes, protocols=bleach.ALLOWED_PROTOCOLS + ['data'])
         return ctx
