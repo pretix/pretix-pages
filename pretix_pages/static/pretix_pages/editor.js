@@ -36,13 +36,14 @@ $(function () {
             theme: 'snow',
             formats: [
                 'bold', 'italic', 'link', 'strike', 'code', 'underline', 'script',
-                'list', 'align', 'code-block', 'header'
+                'list', 'align', 'code-block', 'header', 'image'
             ],
             modules: {
                 toolbar: [
                     [{'header': [3, 4, 5, false]}],
                     ['bold', 'italic', 'underline', 'strike'],
                     ['link'],
+                    ['image'],
                     [{'align': []}],
                     [{'list': 'ordered'}, {'list': 'bullet'}],
                     [{'script': 'sub'}, {'script': 'super'}],

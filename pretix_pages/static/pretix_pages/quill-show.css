@@ -7,6 +7,11 @@
 .ql-align-right {
     text-align: right;
 }
+.ql-content img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
 .ql-content p,
 .ql-content ol,
 .ql-content ul,

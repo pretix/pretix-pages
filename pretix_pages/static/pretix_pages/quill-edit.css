@@ -4,3 +4,8 @@
 .ql-container {
     font-size: 14px;
 }
+.ql-content img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}

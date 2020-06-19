@@ -1,19 +1,23 @@
+from urllib.request import urlopen
+
 import bleach
+import lxml.html
 from django import forms
 from django.contrib import messages
+from django.core.files.base import ContentFile
+from django.core.files.storage import default_storage
 from django.db import transaction
 from django.db.models import Max
 from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import redirect
 from django.urls import reverse
-from django.utils.decorators import method_decorator
+from django.utils.crypto import get_random_string
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import (
     CreateView, DeleteView, ListView, TemplateView, UpdateView,
 )
 from pretix.base.forms import I18nModelForm
 from pretix.control.permissions import EventPermissionRequiredMixin, event_permission_required
-from pretix.presale.utils import event_view
 
 from .models import Page
 
@@ -94,6 +98,35 @@ class PageForm(I18nModelForm):
                 code='duplicate_slug',
             )
         return slug
+
+    mimes = {
+        'image/gif': 'gif',
+        'image/jpeg': 'jpg',
+        'image/png': 'png',
+        'image/webp': 'webp',
+    }
+
+    def clean_text(self):
+        t = self.cleaned_data['text']
+        for locale, html in t.data.items():
+            etrees = lxml.html.fragments_fromstring(html)
+            t.data[locale] = ""
+            for etree in etrees:
+                # Find all data:-based image URLs, store them to CDN and replace the image node
+                for image in etree.xpath('//img'):
+                    original_image_src = image.attrib['src']
+                    if original_image_src.startswith('data:'):
+                        ftype = original_image_src.split(';')[0][5:]
+                        if ftype in self.mimes:
+                            with urlopen(original_image_src) as response:
+                                cfile = ContentFile(response.read())
+                                nonce = get_random_string(length=32)
+                                name = 'pub/{}/pages/img/{}.{}'.format(self.event.organizer.slug, nonce, self.mimes[ftype])
+                                stored_name = default_storage.save(name, cfile)
+                                stored_url = default_storage.url(stored_name)
+                                image.attrib['src'] = stored_url
+                t.data[locale] += lxml.html.tostring(etree).decode()
+        return t
 
 
 class PageEditForm(PageForm):
@@ -248,8 +281,10 @@ class ShowPageView(TemplateView):
         attributes['a'] = ['href', 'title', 'target']
         attributes['p'] = ['class']
         attributes['li'] = ['class']
+        attributes['img'] = ['src']
 
         ctx['content'] = bleach.clean(str(page.text), tags=bleach.ALLOWED_TAGS + [
+            'img',
             'p',
             'br',
             's',
@@ -260,5 +295,5 @@ class ShowPageView(TemplateView):
             'h4',
             'h5',
             'h6'
-        ], attributes=attributes)
+        ], attributes=attributes, protocols=bleach.ALLOWED_PROTOCOLS + ['data'])
         return ctx
