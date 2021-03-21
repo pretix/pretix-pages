@@ -31,6 +31,7 @@ setup(
     url='https://github.com/pretix/pretix-pages',
     author='Raphael Michel',
     author_email='mail@raphaelmichel.de',
+    license='Apache License 2.0',
 
     install_requires=[],
     packages=find_packages(exclude=['tests', 'tests.*']),
