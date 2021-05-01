@@ -8,13 +8,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-07-30 18:00+0000\n"
+"Last-Translator: Abdullah <abdullah.gumaijan@gmail.com>\n"
+"Language-Team: Arabic <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-pages/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 3.10.3\n"
 
 #: pretix_pages/__init__.py:10 pretix_pages/signals.py:23
 #: pretix_pages/templates/pretix_pages/index.html:6
@@ -79,7 +83,7 @@ msgstr ""
 #: pretix_pages/signals.py:117
 #, python-brace-format
 msgid "I have read and agree with the content of the following pages: {plist}"
-msgstr ""
+msgstr "أقر أني قرأت وموافق على محتوى الصفحات التالية: {plist}"
 
 #: pretix_pages/templates/pretix_pages/delete.html:4
 #: pretix_pages/templates/pretix_pages/delete.html:6
@@ -106,7 +110,7 @@ msgstr ""
 
 #: pretix_pages/templates/pretix_pages/form.html:14
 msgid "General information"
-msgstr ""
+msgstr "معلومات عامة"
 
 #: pretix_pages/templates/pretix_pages/form.html:25
 msgid "Please enable JavaScript"
@@ -122,7 +126,7 @@ msgstr ""
 
 #: pretix_pages/templates/pretix_pages/front_page.html:4
 msgid "More information"
-msgstr ""
+msgstr "مزيد من التفاصيل"
 
 #: pretix_pages/templates/pretix_pages/index.html:12
 msgid "You haven't created any pages yet."

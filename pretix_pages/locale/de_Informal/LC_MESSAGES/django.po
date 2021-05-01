@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: 2020-07-07 22:00+0000\n"
+"PO-Revision-Date: 2020-08-25 01:00+0000\n"
 "Last-Translator: Dennis Lichtenthäler <lichtenthaeler@rami.io>\n"
 "Language-Team: German (informal) <https://translate.pretix.eu/projects/"
 "pretix/pretix-plugin-pages/de_Informal/>\n"
@@ -115,7 +115,7 @@ msgstr "Seite"
 
 #: pretix_pages/templates/pretix_pages/form.html:14
 msgid "General information"
-msgstr "Allgemeine Informationen"
+msgstr "Allgemeines"
 
 #: pretix_pages/templates/pretix_pages/form.html:25
 msgid "Please enable JavaScript"
@@ -165,8 +165,8 @@ msgstr "Deine Änderungen wurden gespeichert."
 #: pretix_pages/views.py:190 pretix_pages/views.py:227
 msgid "We could not save your changes. See below for details."
 msgstr ""
-"Die Änderungen konnten nicht gespeichert werden. Die fehlerhaften Felder "
-"sind farblich markiert."
+"Die Änderungen konnten nicht gespeichert werden, siehe weiter unten für "
+"Details."
 
 #: pretix_pages/views.py:219
 msgid "The new page has been created."
