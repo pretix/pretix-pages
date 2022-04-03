@@ -8,13 +8,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2022-04-04 01:00+0000\n"
+"Last-Translator: Liga V <lerning_by_dreaming@gmx.de>\n"
+"Language-Team: Latvian <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-pages/lv/>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= "
+"19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\n"
+"X-Generator: Weblate 4.11.2\n"
 
 #: pretix_pages/__init__.py:10 pretix_pages/signals.py:23
 #: pretix_pages/templates/pretix_pages/index.html:6
@@ -44,11 +48,11 @@ msgstr ""
 
 #: pretix_pages/models.py:22 pretix_pages/templates/pretix_pages/index.html:29
 msgid "Page title"
-msgstr ""
+msgstr "Lapas nosaukums"
 
 #: pretix_pages/models.py:23 pretix_pages/templates/pretix_pages/form.html:22
 msgid "Page content"
-msgstr ""
+msgstr "Lapas saturs"
 
 #: pretix_pages/models.py:24
 msgid "Show link on the event start page"
@@ -84,29 +88,30 @@ msgstr ""
 #: pretix_pages/templates/pretix_pages/delete.html:4
 #: pretix_pages/templates/pretix_pages/delete.html:6
 msgid "Delete a page"
-msgstr ""
+msgstr "Dzēst lapu"
 
 #: pretix_pages/templates/pretix_pages/delete.html:9
 #, python-format
 msgid "Are you sure you want to delete the page <strong>%(name)s</strong>?"
 msgstr ""
+"Vai esat pārliecināts/-a, ka vēlaties dzēst lapu <strong>%(name)s</strong>?"
 
 #: pretix_pages/templates/pretix_pages/delete.html:14
 msgid "Cancel"
-msgstr ""
+msgstr "Atcelt"
 
 #: pretix_pages/templates/pretix_pages/delete.html:17
 msgid "Delete"
-msgstr ""
+msgstr "Dzēst"
 
 #: pretix_pages/templates/pretix_pages/form.html:5
 #: pretix_pages/templates/pretix_pages/form.html:7
 msgid "Page"
-msgstr ""
+msgstr "Lapa"
 
 #: pretix_pages/templates/pretix_pages/form.html:14
 msgid "General information"
-msgstr ""
+msgstr "Vispārīga informācija"
 
 #: pretix_pages/templates/pretix_pages/form.html:25
 msgid "Please enable JavaScript"
@@ -114,7 +119,7 @@ msgstr ""
 
 #: pretix_pages/templates/pretix_pages/form.html:53
 msgid "Save"
-msgstr ""
+msgstr "Saglabāt"
 
 #: pretix_pages/templates/pretix_pages/form.html:62
 msgid "Page history"
