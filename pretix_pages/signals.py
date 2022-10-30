@@ -64,7 +64,7 @@ def footer_link_pages(sender, request=None, **kwargs):
                 })
             } for p in Page.objects.filter(event=sender, link_in_footer=True)
         ]
-        sender.cache.set('pages_footer_links_ ' + get_language(), cached)
+        sender.cache.set('pages_footer_links_' + get_language(), cached)
 
     return cached
 
