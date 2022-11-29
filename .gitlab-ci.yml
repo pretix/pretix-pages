@@ -5,6 +5,7 @@ pypi:
         - source env/bin/activate
         - XDG_CACHE_HOME=/cache pip3 install -U pip wheel setuptools
         - XDG_CACHE_HOME=/cache pip3 install -U pretix
+        - XDG_CACHE_HOME=/cache pip3 install -U pkginfo==1.8.3  # Work around https://github.com/pypa/twine/issues/940
         - python setup.py sdist develop
         - python setup.py sdist clean
         - python setup.py sdist upload
