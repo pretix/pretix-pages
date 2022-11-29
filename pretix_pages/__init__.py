@@ -14,7 +14,7 @@ class PluginApp(AppConfig):
                         'terms of service, etc.')
         featured = True
         visible = True
-        version = '1.4.1'
+        version = '1.4.2'
 
     def ready(self):
         from . import signals  # NOQA
