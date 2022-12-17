@@ -3,6 +3,7 @@ from distutils.command.build import build
 
 from django.core import management
 from setuptools import setup, find_packages
+from pretix_pages import __version__
 
 
 try:
@@ -25,7 +26,7 @@ cmdclass = {
 
 setup(
     name='pretix-pages',
-    version='1.4.2',
+    version=__version__,
     description='pretix plugin that allows you to add static pages to your event site, for example for a FAQ, terms of service, etc.',
     long_description=long_description,
     url='https://github.com/pretix/pretix-pages',
