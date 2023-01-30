@@ -14,10 +14,11 @@ from django.urls import reverse
 from django.utils.crypto import get_random_string
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import (
-    CreateView, DeleteView, ListView, TemplateView, UpdateView,
+    CreateView, ListView, TemplateView, UpdateView,
 )
 from pretix.base.forms import I18nModelForm
 from pretix.control.permissions import EventPermissionRequiredMixin, event_permission_required
+from pretix.helpers.compat import CompatDeleteView
 
 from .models import Page
 
@@ -153,7 +154,7 @@ class PageDetailMixin:
         })
 
 
-class PageDelete(EventPermissionRequiredMixin, PageDetailMixin, DeleteView):
+class PageDelete(EventPermissionRequiredMixin, PageDetailMixin, CompatDeleteView):
     model = Page
     form_class = PageForm
     template_name = 'pretix_pages/delete.html'
