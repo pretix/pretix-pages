@@ -1,6 +1,7 @@
 from django.apps import AppConfig
 from django.utils.translation import gettext_lazy as _
 from . import __version__
+        compatibility = "pretix>=4.16.0"
 
 
 class PluginApp(AppConfig):
@@ -16,6 +17,7 @@ class PluginApp(AppConfig):
         featured = True
         visible = True
         version = __version__
+        compatibility = "pretix>=4.16.0"
 
     def ready(self):
         from . import signals  # NOQA
