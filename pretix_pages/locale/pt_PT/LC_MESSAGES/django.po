@@ -8,25 +8,30 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-03-06 07:00+0000\n"
+"Last-Translator: Vasco Baleia <vb2003.12@gmail.com>\n"
+"Language-Team: Portuguese (Portugal) <https://translate.pretix.eu/projects/"
+"pretix/pretix-plugin-pages/pt_PT/>\n"
 "Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.15.2\n"
 
 #: pretix_pages/__init__.py:10 pretix_pages/signals.py:23
 #: pretix_pages/templates/pretix_pages/index.html:6
 #: pretix_pages/templates/pretix_pages/index.html:8
 msgid "Pages"
-msgstr ""
+msgstr "Páginas"
 
 #: pretix_pages/__init__.py:12
 msgid ""
 "Allows you to add static pages to your event site, for example for a FAQ, "
 "terms of service, etc."
 msgstr ""
+"Permite adicionar páginas estáticas ao site do evento, para, por exemplo, "
+"FAQs, termos e condições, etc."
 
 #: pretix_pages/models.py:11 pretix_pages/views.py:101
 msgid "URL form"
