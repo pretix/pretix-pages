@@ -156,7 +156,6 @@ class PageDetailMixin:
 
 class PageDelete(EventPermissionRequiredMixin, PageDetailMixin, CompatDeleteView):
     model = Page
-    form_class = PageForm
     template_name = 'pretix_pages/delete.html'
     context_object_name = 'page'
     permission = 'can_change_event_settings'
