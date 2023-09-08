@@ -16,6 +16,8 @@ from django.utils.translation import gettext_lazy as _
 from django.views.generic import (
     CreateView, ListView, TemplateView, UpdateView,
 )
+from pretix.multidomain.urlreverse import build_absolute_uri
+
 from pretix.base.forms import I18nModelForm
 from pretix.control.permissions import EventPermissionRequiredMixin, event_permission_required
 from pretix.helpers.compat import CompatDeleteView
@@ -195,6 +197,10 @@ class PageUpdate(EventPermissionRequiredMixin, PageDetailMixin, PageEditorMixin,
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data()
         ctx['locales'] = []
+        ctx['url'] = build_absolute_uri(self.request.event, 'plugins:pretix_pages:show', kwargs={
+            'slug': self.object.slug,
+        })
+
         for lng in self.request.event.settings.locales:
             dataline = (
                 self.object.text.data[lng]
