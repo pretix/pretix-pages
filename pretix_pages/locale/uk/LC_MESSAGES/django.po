@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: 2024-05-01 02:00+0000\n"
+"PO-Revision-Date: 2024-05-03 01:00+0000\n"
 "Last-Translator: Serhii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-pages/uk/>\n"
@@ -24,97 +24,104 @@ msgstr ""
 #: pretix_pages/templates/pretix_pages/index.html:6
 #: pretix_pages/templates/pretix_pages/index.html:8
 msgid "Pages"
-msgstr ""
+msgstr "Сторінки"
 
 #: pretix_pages/__init__.py:12
 msgid ""
 "Allows you to add static pages to your event site, for example for a FAQ, "
 "terms of service, etc."
 msgstr ""
+"Дозволяє Вам додавати статичні сторінки до сторінки з подією, такі як Часті "
+"запитання, Умови обслуговування тощо."
 
 #: pretix_pages/models.py:11 pretix_pages/views.py:101
 msgid "URL form"
-msgstr ""
+msgstr "Форма URL"
 
 #: pretix_pages/models.py:15
 msgid "The slug may only contain letters, numbers, dots and dashes."
-msgstr ""
+msgstr "Ім'я може містити лише літери, цифри, крапки та тире."
 
 #: pretix_pages/models.py:18
 msgid ""
 "This will be used to generate the URL of the page. Please only use latin "
 "letters, numbers, dots and dashes. You cannot change this afterwards."
 msgstr ""
+"Це буде використано для створення URL-адреси сторінки. Використовуйте, будь "
+"ласка, лише латинські літери, цифри, крапки та тире. Змінити це пізніше буде "
+"неможливо."
 
 #: pretix_pages/models.py:22 pretix_pages/templates/pretix_pages/index.html:29
 msgid "Page title"
-msgstr ""
+msgstr "Назва сторінки"
 
 #: pretix_pages/models.py:23 pretix_pages/templates/pretix_pages/form.html:22
 msgid "Page content"
-msgstr ""
+msgstr "Зміст сторінки"
 
 #: pretix_pages/models.py:24
 msgid "Show link on the event start page"
-msgstr ""
+msgstr "Показувати посилання на головній сторінці події"
 
 #: pretix_pages/models.py:25
 msgid "Show link in the event footer"
-msgstr ""
+msgstr "Показувати посилання знизу сторінки"
 
 #: pretix_pages/models.py:27
 msgid ""
 "Require the user to acknowledge this page before an order is created (e.g. "
 "for terms of service)."
 msgstr ""
+"Вміст цієї сторінки має бути прийнятий користувачем перед створенням "
+"замовлення (наприклад, для умов обслуговування)."
 
 #: pretix_pages/signals.py:46
 msgid "The page has been created."
-msgstr ""
+msgstr "Сторінка була створена."
 
 #: pretix_pages/signals.py:47
 msgid "The page has been modified."
-msgstr ""
+msgstr "Сторінка була змінена."
 
 #: pretix_pages/signals.py:48
 msgid "The page has been deleted."
-msgstr ""
+msgstr "Сторінка була видалена."
 
 #: pretix_pages/signals.py:117
 #, python-brace-format
 msgid "I have read and agree with the content of the following pages: {plist}"
-msgstr ""
+msgstr "Я прочитав(-ла) і погоджуюся з вмістом наступних сторінок: {plist}"
 
 #: pretix_pages/templates/pretix_pages/delete.html:4
 #: pretix_pages/templates/pretix_pages/delete.html:6
 msgid "Delete a page"
-msgstr ""
+msgstr "Видалити сторінку"
 
 #: pretix_pages/templates/pretix_pages/delete.html:9
 #, python-format
 msgid "Are you sure you want to delete the page <strong>%(name)s</strong>?"
-msgstr ""
+msgstr "Ви дійсно хочете видалити сторінку <strong>%(name)s</strong>?"
 
 #: pretix_pages/templates/pretix_pages/delete.html:14
 msgid "Cancel"
-msgstr ""
+msgstr "Скасувати"
 
 #: pretix_pages/templates/pretix_pages/delete.html:17
 msgid "Delete"
-msgstr ""
+msgstr "Видалити"
 
 #: pretix_pages/templates/pretix_pages/form.html:5
 #: pretix_pages/templates/pretix_pages/form.html:7
 msgid "Page"
-msgstr ""
+msgstr "Сторінка"
 
 #: pretix_pages/templates/pretix_pages/form.html:14
 msgid "General information"
-msgstr ""
+msgstr "Загальна інформація"
 
 #: pretix_pages/templates/pretix_pages/form.html:25
 msgid "Please enable JavaScript"
-msgstr ""
+msgstr "Активуйте, будь ласка, JavaScript"
 
 #: pretix_pages/templates/pretix_pages/form.html:53
 msgid "Save"
@@ -122,45 +129,45 @@ msgstr "Зберегти"
 
 #: pretix_pages/templates/pretix_pages/form.html:62
 msgid "Page history"
-msgstr ""
+msgstr "Історія сторінки"
 
 #: pretix_pages/templates/pretix_pages/front_page.html:4
 msgid "More information"
-msgstr ""
+msgstr "Докладніше"
 
 #: pretix_pages/templates/pretix_pages/index.html:12
 msgid "You haven't created any pages yet."
-msgstr ""
+msgstr "Ви ще не створили жодної сторінки."
 
 #: pretix_pages/templates/pretix_pages/index.html:18
 #: pretix_pages/templates/pretix_pages/index.html:22
 msgid "Create a new page"
-msgstr ""
+msgstr "Створити нову сторінку"
 
 #: pretix_pages/views.py:43 pretix_pages/views.py:115 pretix_pages/views.py:241
 msgid "The requested page does not exist."
-msgstr ""
+msgstr "Потрібна сторінка не існує."
 
 #: pretix_pages/views.py:59
 msgid "The order of pages has been updated."
-msgstr ""
+msgstr "Порядок сторінок оновлено."
 
 #: pretix_pages/views.py:94
 msgid "You already have a page on that URL."
-msgstr ""
+msgstr "У Вас уже є сторінка з цією URL-адресою."
 
 #: pretix_pages/views.py:136
 msgid "The selected page has been deleted."
-msgstr ""
+msgstr "Обрана сторінка була видалена."
 
 #: pretix_pages/views.py:179
 msgid "Your changes have been saved."
-msgstr ""
+msgstr "Ваші зміни були збережені."
 
 #: pretix_pages/views.py:190 pretix_pages/views.py:227
 msgid "We could not save your changes. See below for details."
-msgstr ""
+msgstr "Нам не вдалося зберегти Ваші зміни. Подробиці дивіться нижче."
 
 #: pretix_pages/views.py:219
 msgid "The new page has been created."
-msgstr ""
+msgstr "Нова сторінка була створена."
