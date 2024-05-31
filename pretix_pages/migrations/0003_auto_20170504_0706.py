@@ -9,13 +9,24 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('pretix_pages', '0002_auto_20170220_1423'),
+        ("pretix_pages", "0002_auto_20170220_1423"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='page',
-            name='slug',
-            field=models.CharField(db_index=True, help_text='This will be used to generate the URL of the page. Please only use latin letters, numbers, dots and dashes. You cannot change this afterwards.', max_length=150, validators=[django.core.validators.RegexValidator(message='The slug may only contain letters, numbers, dots and dashes.', regex='^[a-zA-Z0-9.-]+$')], verbose_name='URL form'),
+            model_name="page",
+            name="slug",
+            field=models.CharField(
+                db_index=True,
+                help_text="This will be used to generate the URL of the page. Please only use latin letters, numbers, dots and dashes. You cannot change this afterwards.",
+                max_length=150,
+                validators=[
+                    django.core.validators.RegexValidator(
+                        message="The slug may only contain letters, numbers, dots and dashes.",
+                        regex="^[a-zA-Z0-9.-]+$",
+                    )
+                ],
+                verbose_name="URL form",
+            ),
         ),
     ]

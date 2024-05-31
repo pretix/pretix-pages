@@ -12,20 +12,34 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('pretixbase', '0058_auto_20170107_1533'),
+        ("pretixbase", "0058_auto_20170107_1533"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Page',
+            name="Page",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('slug', models.CharField(db_index=True, max_length=150)),
-                ('title', i18nfield.fields.I18nCharField()),
-                ('text', i18nfield.fields.I18nTextField()),
-                ('link_on_frontpage', models.BooleanField(default=False)),
-                ('link_in_footer', models.BooleanField(default=False)),
-                ('event', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='pretixbase.Event')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("slug", models.CharField(db_index=True, max_length=150)),
+                ("title", i18nfield.fields.I18nCharField()),
+                ("text", i18nfield.fields.I18nTextField()),
+                ("link_on_frontpage", models.BooleanField(default=False)),
+                ("link_in_footer", models.BooleanField(default=False)),
+                (
+                    "event",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="pretixbase.Event",
+                    ),
+                ),
             ],
         ),
     ]

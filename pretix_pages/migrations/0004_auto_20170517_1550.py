@@ -8,17 +8,17 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('pretix_pages', '0003_auto_20170504_0706'),
+        ("pretix_pages", "0003_auto_20170504_0706"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='page',
-            options={'ordering': ['position', 'title']},
+            name="page",
+            options={"ordering": ["position", "title"]},
         ),
         migrations.AddField(
-            model_name='page',
-            name='position',
+            model_name="page",
+            name="position",
             field=models.IntegerField(default=0),
         ),
     ]
