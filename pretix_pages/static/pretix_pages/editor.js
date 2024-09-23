@@ -54,9 +54,8 @@ $(function () {
     });
 
     $('.editor').closest('form').submit(function () {
-        $('.editor').each(function () {
-            var val = $(this).find('.ql-editor').html();
-            $("textarea[name^=text_][lang=" + $(this).attr("data-lng") + "]").val(val);
-        });
+        for (const [lang, q] of Object.entries(quills)) {
+            $("textarea[name^=text_][lang=" + lang + "]").val(q.getSemanticHTML());
+        }
     });
 });
