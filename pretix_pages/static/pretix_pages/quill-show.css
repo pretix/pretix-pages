@@ -27,6 +27,20 @@
     padding: 0;
     counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
 }
+.ql-content p:before,
+.ql-content ol:before,
+.ql-content ul:before,
+.ql-content pre:before,
+.ql-content blockquote:before,
+.ql-content h1:before,
+.ql-content h2:before,
+.ql-content h3:before,
+.ql-content h4:before,
+.ql-content h5:before,
+.ql-content h6:before {
+    /* ensure emtpy elements take space for at least one line with a zero-width-space */
+    content: '\200B';
+}
 .ql-content ol,
 .ql-content ul {
     padding-left: 1.5em;
