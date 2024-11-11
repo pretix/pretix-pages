@@ -315,9 +315,8 @@ class ShowPageView(TemplateView):
 
         ctx["content"] = bleach.clean(
             str(page.text),
-            tags=bleach.ALLOWED_TAGS
-            + ["img", "p", "br", "s", "sup", "sub", "u", "h3", "h4", "h5", "h6"],
+            tags=bleach.ALLOWED_TAGS | {"img", "p", "br", "s", "sup", "sub", "u", "h3", "h4", "h5", "h6"},
             attributes=attributes,
-            protocols=bleach.ALLOWED_PROTOCOLS + ["data"],
+            protocols=bleach.ALLOWED_PROTOCOLS | {"data"},
         )
         return ctx
