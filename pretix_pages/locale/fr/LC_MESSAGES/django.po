@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: 2024-11-15 20:00+0000\n"
+"PO-Revision-Date: 2024-11-16 08:00+0000\n"
 "Last-Translator: CVZ-es <damien.bremont@casadevelazquez.org>\n"
 "Language-Team: French <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-pages/fr/>\n"
@@ -163,7 +163,7 @@ msgstr "La page sélectionnée a été supprimée."
 
 #: pretix_pages/views.py:179
 msgid "Your changes have been saved."
-msgstr "Vos changements ont été sauvegardés."
+msgstr "Vos modifications ont été enregistrées."
 
 #: pretix_pages/views.py:190 pretix_pages/views.py:227
 msgid "We could not save your changes. See below for details."
