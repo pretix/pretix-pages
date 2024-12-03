@@ -329,16 +329,20 @@ class ShowPageView(TemplateView):
         page = self.get_page()
         ctx["page"] = page
 
-        attributes = dict(bleach.ALLOWED_ATTRIBUTES)
-        attributes["a"] = ["href", "title", "target"]
-        attributes["p"] = ["class"]
-        attributes["li"] = ["class"]
-        attributes["img"] = ["src"]
+        if page.content_type == 'markdown':
+            # markdown pages are getting sanitized by the rich_text filter
+            ctx["content"] = page.text
+        else:
+            attributes = dict(bleach.ALLOWED_ATTRIBUTES)
+            attributes["a"] = ["href", "title", "target"]
+            attributes["p"] = ["class"]
+            attributes["li"] = ["class"]
+            attributes["img"] = ["src"]
 
-        ctx["content"] = bleach.clean(
-            str(page.text),
-            tags=bleach.ALLOWED_TAGS | {"img", "p", "br", "s", "sup", "sub", "u", "h3", "h4", "h5", "h6"},
-            attributes=attributes,
-            protocols=bleach.ALLOWED_PROTOCOLS | {"data"},
-        )
+            ctx["content"] = bleach.clean(
+                str(page.text),
+                tags=bleach.ALLOWED_TAGS | {"img", "p", "br", "s", "sup", "sub", "u", "h3", "h4", "h5", "h6"},
+                attributes=attributes,
+                protocols=bleach.ALLOWED_PROTOCOLS | {"data"},
+            )
         return ctx
