@@ -9,10 +9,13 @@ from django.db.models import Max
 from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import redirect
 from django.urls import reverse
+from django.utils.functional import cached_property
 from django.utils.crypto import get_random_string
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, ListView, TemplateView, UpdateView
-from pretix.base.forms import I18nModelForm
+from i18nfield.forms import I18nFormField
+from pretix.base.forms import I18nModelForm, I18nMarkdownTextarea
+I18nMarkdownTextarea
 from pretix.control.permissions import (
     EventPermissionRequiredMixin, event_permission_required,
 )
@@ -82,6 +85,13 @@ def page_move_down(request, organizer, event, page):
 
 
 class PageForm(I18nModelForm):
+    text = I18nFormField(
+        required=False,
+        widget=I18nMarkdownTextarea,
+        widget_kwargs={'attrs': {
+            'rows': '12',
+        }}
+    )
 
     def __init__(self, *args, **kwargs):
         self.event = kwargs.get("event")
@@ -116,26 +126,30 @@ class PageForm(I18nModelForm):
 
     def clean_text(self):
         t = self.cleaned_data["text"]
-        for locale, html in t.data.items():
-            etrees = lxml.html.fragments_fromstring(html)
-            t.data[locale] = ""
-            for etree in etrees:
-                # Find all data:-based image URLs, store them to CDN and replace the image node
-                for image in etree.xpath("//img"):
-                    original_image_src = image.attrib["src"]
-                    if original_image_src.startswith("data:"):
-                        ftype = original_image_src.split(";")[0][5:]
-                        if ftype in self.mimes:
-                            with urlopen(original_image_src) as response:
-                                cfile = ContentFile(response.read())
-                                nonce = get_random_string(length=32)
-                                name = "pub/{}/pages/img/{}.{}".format(
-                                    self.event.organizer.slug, nonce, self.mimes[ftype]
-                                )
-                                stored_name = default_storage.save(name, cfile)
-                                stored_url = default_storage.url(stored_name)
-                                image.attrib["src"] = stored_url
-                t.data[locale] += lxml.html.tostring(etree).decode()
+        content_type = self.instance.content_type or 'html'
+        if content_type == 'html':
+            for locale, html in t.data.items():
+                etrees = lxml.html.fragments_fromstring(html)
+                t.data[locale] = ""
+                for etree in etrees:
+                    # Find all data:-based image URLs, store them to CDN and replace the image node
+                    for image in etree.xpath("//img"):
+                        original_image_src = image.attrib["src"]
+                        if original_image_src.startswith("data:"):
+                            ftype = original_image_src.split(";")[0][5:]
+                            if ftype in self.mimes:
+                                with urlopen(original_image_src) as response:
+                                    cfile = ContentFile(response.read())
+                                    nonce = get_random_string(length=32)
+                                    name = "pub/{}/pages/img/{}.{}".format(
+                                        self.event.organizer.slug, nonce, self.mimes[ftype]
+                                    )
+                                    stored_name = default_storage.save(name, cfile)
+                                    stored_url = default_storage.url(stored_name)
+                                    image.attrib["src"] = stored_url
+                    t.data[locale] += lxml.html.tostring(etree).decode()
+
+        # TODO: store embedded images in markdown
         return t
 
 
@@ -216,6 +230,7 @@ class PageUpdate(
                 "slug": self.object.slug,
             },
         )
+        ctx["content_type"] = self.object.content_type
 
         for lng in self.request.event.settings.locales:
             dataline = (
@@ -253,11 +268,16 @@ class PageCreate(EventPermissionRequiredMixin, PageEditorMixin, CreateView):
     template_name = "pretix_pages/form.html"
     permission = "can_change_event_settings"
 
+    @cached_property
+    def content_type(self):
+        return self.kwargs['content_type'] if 'content_type' in self.kwargs else 'html'
+
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data()
         ctx["locales"] = [
             (locale, "") for locale in self.request.event.settings.locales
         ]
+        ctx["content_type"] = self.content_type
         return ctx
 
     def get_success_url(self) -> str:
@@ -270,7 +290,9 @@ class PageCreate(EventPermissionRequiredMixin, PageEditorMixin, CreateView):
         )
 
     @transaction.atomic
+
     def form_valid(self, form):
+        form.instance.content_type = self.content_type
         form.instance.event = self.request.event
         form.instance.event = self.request.event
         form.instance.position = (

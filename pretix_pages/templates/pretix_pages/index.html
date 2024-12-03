@@ -15,11 +15,17 @@
             </p>
 
             <a href="{% url "plugins:pretix_pages:create" organizer=request.event.organizer.slug event=request.event.slug %}"
-                    class="btn btn-primary btn-lg"><i class="fa fa-plus"></i> {% trans "Create a new page" %}</a>
+                    class="btn btn-primary btn-lg"><i class="fa fa-plus"></i> {% trans "Create a new page" %} (HTML)</a>
+            <a href="{% url "plugins:pretix_pages:create" organizer=request.event.organizer.slug event=request.event.slug content_type="markdown" %}"
+                    class="btn btn-primary btn-lg"><i class="fa fa-plus"></i> {% trans "Create a new page" %} (Markdown)</a>
         </div>
     {% else %}
         <p>
             <a href="{% url "plugins:pretix_pages:create" organizer=request.event.organizer.slug event=request.event.slug %}" class="btn btn-default"><i class="fa fa-plus"></i> {% trans "Create a new page" %}
+                (HTML)
+            </a>
+            <a href="{% url "plugins:pretix_pages:create" organizer=request.event.organizer.slug event=request.event.slug content_type="markdown" %}" class="btn btn-default"><i class="fa fa-plus"></i> {% trans "Create a new page" %}
+                (Markdown)
             </a>
         </p>
         <div class="table-responsive">
