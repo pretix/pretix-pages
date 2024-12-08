@@ -14,6 +14,11 @@ urlpatterns = [
         name="create",
     ),
     path(
+        "control/event/<str:organizer>/<str:event>/pages/create/<str:content_type>",
+        views.PageCreate.as_view(),
+        name="create",
+    ),
+    path(
         "control/event/<str:organizer>/<str:event>/pages/<int:page>/",
         views.PageUpdate.as_view(),
         name="edit",
