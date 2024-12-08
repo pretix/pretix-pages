@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("pretix_pages", "0005_alter_page_id"),
+        ("pretix_pages", "0004_auto_20170517_1550"),
     ]
 
     operations = [
