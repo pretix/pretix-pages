@@ -8,155 +8,159 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-01-31 01:00+0000\n"
+"Last-Translator: Chislon <chislon@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://translate.pretix.eu/"
+"projects/pretix/pretix-plugin-pages/zh_Hant/>\n"
 "Language: zh_Hant\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #: pretix_pages/__init__.py:10 pretix_pages/signals.py:23
 #: pretix_pages/templates/pretix_pages/index.html:6
 #: pretix_pages/templates/pretix_pages/index.html:8
 msgid "Pages"
-msgstr ""
+msgstr "頁面"
 
 #: pretix_pages/__init__.py:12
 msgid ""
 "Allows you to add static pages to your event site, for example for a FAQ, "
 "terms of service, etc."
-msgstr ""
+msgstr "允許你為活動網站新增靜態頁面，例如常見問題、服務條款等。"
 
 #: pretix_pages/models.py:11 pretix_pages/views.py:101
 msgid "URL form"
-msgstr ""
+msgstr "URL形式"
 
 #: pretix_pages/models.py:15
 msgid "The slug may only contain letters, numbers, dots and dashes."
-msgstr ""
+msgstr "標記只能包含字母、數字、點和破折號。"
 
 #: pretix_pages/models.py:18
 msgid ""
 "This will be used to generate the URL of the page. Please only use latin "
 "letters, numbers, dots and dashes. You cannot change this afterwards."
-msgstr ""
+msgstr "這將用於產生頁面的 "
+"URL。請僅使用拉丁字母、數字、點和破折號。之後您無法變更此設定。"
 
 #: pretix_pages/models.py:22 pretix_pages/templates/pretix_pages/index.html:29
 msgid "Page title"
-msgstr ""
+msgstr "頁面標題"
 
 #: pretix_pages/models.py:23 pretix_pages/templates/pretix_pages/form.html:22
 msgid "Page content"
-msgstr ""
+msgstr "頁面內容"
 
 #: pretix_pages/models.py:24
 msgid "Show link on the event start page"
-msgstr ""
+msgstr "在活動開始頁面上顯示鏈接"
 
 #: pretix_pages/models.py:25
 msgid "Show link in the event footer"
-msgstr ""
+msgstr "在活動頁腳中顯示鏈接"
 
 #: pretix_pages/models.py:27
 msgid ""
 "Require the user to acknowledge this page before an order is created (e.g. "
 "for terms of service)."
-msgstr ""
+msgstr "要求使用者在建立訂單之前確認此頁面（例如服務條款）。"
 
 #: pretix_pages/signals.py:46
 msgid "The page has been created."
-msgstr ""
+msgstr "頁面已被建立。"
 
 #: pretix_pages/signals.py:47
 msgid "The page has been modified."
-msgstr ""
+msgstr "頁面已被更改。"
 
 #: pretix_pages/signals.py:48
 msgid "The page has been deleted."
-msgstr ""
+msgstr "頁面已被刪除。"
 
 #: pretix_pages/signals.py:117
 #, python-brace-format
 msgid "I have read and agree with the content of the following pages: {plist}"
-msgstr ""
+msgstr "我已閱讀並同意以下頁面的內容: {plist}"
 
 #: pretix_pages/templates/pretix_pages/delete.html:4
 #: pretix_pages/templates/pretix_pages/delete.html:6
 msgid "Delete a page"
-msgstr ""
+msgstr "刪除頁面"
 
 #: pretix_pages/templates/pretix_pages/delete.html:9
 #, python-format
 msgid "Are you sure you want to delete the page <strong>%(name)s</strong>?"
-msgstr ""
+msgstr "你確定要刪除該頁面<strong>%(name)s</strong>嗎?"
 
 #: pretix_pages/templates/pretix_pages/delete.html:14
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: pretix_pages/templates/pretix_pages/delete.html:17
 msgid "Delete"
-msgstr ""
+msgstr "刪除"
 
 #: pretix_pages/templates/pretix_pages/form.html:5
 #: pretix_pages/templates/pretix_pages/form.html:7
 msgid "Page"
-msgstr ""
+msgstr "頁面"
 
 #: pretix_pages/templates/pretix_pages/form.html:14
 msgid "General information"
-msgstr ""
+msgstr "一般資訊"
 
 #: pretix_pages/templates/pretix_pages/form.html:25
 msgid "Please enable JavaScript"
-msgstr ""
+msgstr "請啟用 JavaScript"
 
 #: pretix_pages/templates/pretix_pages/form.html:53
 msgid "Save"
-msgstr ""
+msgstr "儲存"
 
 #: pretix_pages/templates/pretix_pages/form.html:62
 msgid "Page history"
-msgstr ""
+msgstr "頁面歷史"
 
 #: pretix_pages/templates/pretix_pages/front_page.html:4
 msgid "More information"
-msgstr ""
+msgstr "更多資訊"
 
 #: pretix_pages/templates/pretix_pages/index.html:12
 msgid "You haven't created any pages yet."
-msgstr ""
+msgstr "你尚未建立任何頁面。"
 
 #: pretix_pages/templates/pretix_pages/index.html:18
 #: pretix_pages/templates/pretix_pages/index.html:22
 msgid "Create a new page"
-msgstr ""
+msgstr "建立新頁面"
 
 #: pretix_pages/views.py:43 pretix_pages/views.py:115 pretix_pages/views.py:241
 msgid "The requested page does not exist."
-msgstr ""
+msgstr "請求的頁面不存在。"
 
 #: pretix_pages/views.py:59
 msgid "The order of pages has been updated."
-msgstr ""
+msgstr "頁面順序已更新。"
 
 #: pretix_pages/views.py:94
 msgid "You already have a page on that URL."
-msgstr ""
+msgstr "該 URL 上已有一個頁面。"
 
 #: pretix_pages/views.py:136
 msgid "The selected page has been deleted."
-msgstr ""
+msgstr "選定的頁面已被刪除。"
 
 #: pretix_pages/views.py:179
 msgid "Your changes have been saved."
-msgstr ""
+msgstr "你的變更已儲存。"
 
 #: pretix_pages/views.py:190 pretix_pages/views.py:227
 msgid "We could not save your changes. See below for details."
-msgstr ""
+msgstr "我們無法儲存你的變更。請參閱下文以了解詳情。"
 
 #: pretix_pages/views.py:219
 msgid "The new page has been created."
-msgstr ""
+msgstr "新頁面已建立。"
