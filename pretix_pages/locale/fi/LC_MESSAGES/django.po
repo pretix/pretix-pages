@@ -8,155 +8,164 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-02-12 15:56+0000\n"
+"Last-Translator: Johanna Ketola <johanna.ketola@om.org>\n"
+"Language-Team: Finnish <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-pages/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #: pretix_pages/__init__.py:10 pretix_pages/signals.py:23
 #: pretix_pages/templates/pretix_pages/index.html:6
 #: pretix_pages/templates/pretix_pages/index.html:8
 msgid "Pages"
-msgstr ""
+msgstr "Sivut"
 
 #: pretix_pages/__init__.py:12
 msgid ""
 "Allows you to add static pages to your event site, for example for a FAQ, "
 "terms of service, etc."
 msgstr ""
+"Voit lisätä tapahtumasivustollesi staattisia sivuja, esimerkiksi usein "
+"kysytyt kysymykset, käyttöehdot jne."
 
 #: pretix_pages/models.py:11 pretix_pages/views.py:101
 msgid "URL form"
-msgstr ""
+msgstr "URL-muoto"
 
 #: pretix_pages/models.py:15
 msgid "The slug may only contain letters, numbers, dots and dashes."
-msgstr ""
+msgstr "Slugi saa sisältää vain kirjaimia, numeroita, pisteitä ja viivoja."
 
 #: pretix_pages/models.py:18
 msgid ""
 "This will be used to generate the URL of the page. Please only use latin "
 "letters, numbers, dots and dashes. You cannot change this afterwards."
 msgstr ""
+"Tätä käytetään sivun URL-osoitteen luomiseen. Käytä vain latinalaisia "
+"kirjaimia, numeroita, pisteitä ja viivoja. Et voi muuttaa tätä jälkikäteen."
 
 #: pretix_pages/models.py:22 pretix_pages/templates/pretix_pages/index.html:29
 msgid "Page title"
-msgstr ""
+msgstr "Sivun otsikko"
 
 #: pretix_pages/models.py:23 pretix_pages/templates/pretix_pages/form.html:22
 msgid "Page content"
-msgstr ""
+msgstr "Sivun sisältö"
 
 #: pretix_pages/models.py:24
 msgid "Show link on the event start page"
-msgstr ""
+msgstr "Näytä linkki tapahtuman aloitussivulla"
 
 #: pretix_pages/models.py:25
 msgid "Show link in the event footer"
-msgstr ""
+msgstr "Näytä linkki tapahtuman alatunnisteessa"
 
 #: pretix_pages/models.py:27
 msgid ""
 "Require the user to acknowledge this page before an order is created (e.g. "
 "for terms of service)."
 msgstr ""
+"Vaadi käyttäjää hyväksymään tämä sivu ennen tilauksen luomista (esim. "
+"käyttöehdot)."
 
 #: pretix_pages/signals.py:46
 msgid "The page has been created."
-msgstr ""
+msgstr "Sivu on luotu."
 
 #: pretix_pages/signals.py:47
 msgid "The page has been modified."
-msgstr ""
+msgstr "Sivua on muokattu."
 
 #: pretix_pages/signals.py:48
 msgid "The page has been deleted."
-msgstr ""
+msgstr "Sivu on poistettu."
 
 #: pretix_pages/signals.py:117
 #, python-brace-format
 msgid "I have read and agree with the content of the following pages: {plist}"
-msgstr ""
+msgstr "Olen lukenut seuraavien sivujen sisällön ja hyväksyn sen: {plist}"
 
 #: pretix_pages/templates/pretix_pages/delete.html:4
 #: pretix_pages/templates/pretix_pages/delete.html:6
 msgid "Delete a page"
-msgstr ""
+msgstr "Poista sivu"
 
 #: pretix_pages/templates/pretix_pages/delete.html:9
 #, python-format
 msgid "Are you sure you want to delete the page <strong>%(name)s</strong>?"
-msgstr ""
+msgstr "Haluatko varmasti poistaa sivun <strong>%(name)s</strong>?"
 
 #: pretix_pages/templates/pretix_pages/delete.html:14
 msgid "Cancel"
-msgstr ""
+msgstr "Peruuta"
 
 #: pretix_pages/templates/pretix_pages/delete.html:17
 msgid "Delete"
-msgstr ""
+msgstr "Poista"
 
 #: pretix_pages/templates/pretix_pages/form.html:5
 #: pretix_pages/templates/pretix_pages/form.html:7
 msgid "Page"
-msgstr ""
+msgstr "Sivu"
 
 #: pretix_pages/templates/pretix_pages/form.html:14
 msgid "General information"
-msgstr ""
+msgstr "Yleiset tiedot"
 
 #: pretix_pages/templates/pretix_pages/form.html:25
 msgid "Please enable JavaScript"
-msgstr ""
+msgstr "Ota JavaScript käyttöön"
 
 #: pretix_pages/templates/pretix_pages/form.html:53
 msgid "Save"
-msgstr ""
+msgstr "Tallenna"
 
 #: pretix_pages/templates/pretix_pages/form.html:62
 msgid "Page history"
-msgstr ""
+msgstr "Sivuhistoria"
 
 #: pretix_pages/templates/pretix_pages/front_page.html:4
 msgid "More information"
-msgstr ""
+msgstr "Lisää tietoa"
 
 #: pretix_pages/templates/pretix_pages/index.html:12
 msgid "You haven't created any pages yet."
-msgstr ""
+msgstr "Et ole vielä luonut yhtään sivua."
 
 #: pretix_pages/templates/pretix_pages/index.html:18
 #: pretix_pages/templates/pretix_pages/index.html:22
 msgid "Create a new page"
-msgstr ""
+msgstr "Luo uusi sivu"
 
 #: pretix_pages/views.py:43 pretix_pages/views.py:115 pretix_pages/views.py:241
 msgid "The requested page does not exist."
-msgstr ""
+msgstr "Pyydettyä sivua ei ole olemassa."
 
 #: pretix_pages/views.py:59
 msgid "The order of pages has been updated."
-msgstr ""
+msgstr "Sivujen järjestystä on päivitetty."
 
 #: pretix_pages/views.py:94
 msgid "You already have a page on that URL."
-msgstr ""
+msgstr "Sinulla on jo sivu kyseisessä URL-osoitteessa."
 
 #: pretix_pages/views.py:136
 msgid "The selected page has been deleted."
-msgstr ""
+msgstr "Valittu sivu on poistettu."
 
 #: pretix_pages/views.py:179
 msgid "Your changes have been saved."
-msgstr ""
+msgstr "Muutoksesi on tallennettu."
 
 #: pretix_pages/views.py:190 pretix_pages/views.py:227
 msgid "We could not save your changes. See below for details."
-msgstr ""
+msgstr "Emme voineet tallentaa tekemiäsi muutoksia. Katso alla olevat tiedot."
 
 #: pretix_pages/views.py:219
 msgid "The new page has been created."
-msgstr ""
+msgstr "Uusi sivu on luotu."
