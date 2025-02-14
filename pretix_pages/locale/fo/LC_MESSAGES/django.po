@@ -8,155 +8,166 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-02-15 08:00+0000\n"
+"Last-Translator: Andrias Magnussen <andrias.magnussen@om.org>\n"
+"Language-Team: Faroese <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-pages/fo/>\n"
 "Language: fo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #: pretix_pages/__init__.py:10 pretix_pages/signals.py:23
 #: pretix_pages/templates/pretix_pages/index.html:6
 #: pretix_pages/templates/pretix_pages/index.html:8
 msgid "Pages"
-msgstr ""
+msgstr "Síður"
 
 #: pretix_pages/__init__.py:12
 msgid ""
 "Allows you to add static pages to your event site, for example for a FAQ, "
 "terms of service, etc."
 msgstr ""
+"Loyvir, at tú kanst leggja eina síðu við hagtølum afturat tíni tiltakssíðu "
+"t.d. eina OSS, handilstreytir o.l."
 
 #: pretix_pages/models.py:11 pretix_pages/views.py:101
 msgid "URL form"
-msgstr ""
+msgstr "URL form"
 
 #: pretix_pages/models.py:15
 msgid "The slug may only contain letters, numbers, dots and dashes."
 msgstr ""
+"Eitt stutt URL kann einans innihalda bókstavar, tøl, prikkar og bindistrikur."
 
 #: pretix_pages/models.py:18
 msgid ""
 "This will be used to generate the URL of the page. Please only use latin "
 "letters, numbers, dots and dashes. You cannot change this afterwards."
 msgstr ""
+"Hetta verður nýtt til at gera URL hjá síðuni. Vinarliga nýt einans latínskar "
+"bókstavir, tøl, prikkar og bindistrikur. GG: Hetta kann ikki broytast, eftir "
+"at tað er stovnað."
 
 #: pretix_pages/models.py:22 pretix_pages/templates/pretix_pages/index.html:29
 msgid "Page title"
-msgstr ""
+msgstr "Heiti á síðuni"
 
 #: pretix_pages/models.py:23 pretix_pages/templates/pretix_pages/form.html:22
 msgid "Page content"
-msgstr ""
+msgstr "Innihald á síðuni"
 
 #: pretix_pages/models.py:24
 msgid "Show link on the event start page"
-msgstr ""
+msgstr "Vís leinkjuna á byrjunarsíðuni á tiltakinum"
 
 #: pretix_pages/models.py:25
 msgid "Show link in the event footer"
-msgstr ""
+msgstr "Vís leinkjuna í síðufótini á tiltakinum"
 
 #: pretix_pages/models.py:27
 msgid ""
 "Require the user to acknowledge this page before an order is created (e.g. "
 "for terms of service)."
 msgstr ""
+"Set sum krav, at brúkararnir hava sæð hesa síðuna, áðrenn teir umbiðja ein "
+"faktura (t.d. handilstreytir)."
 
 #: pretix_pages/signals.py:46
 msgid "The page has been created."
-msgstr ""
+msgstr "Síðan er stovnað."
 
 #: pretix_pages/signals.py:47
 msgid "The page has been modified."
-msgstr ""
+msgstr "Síðan er broytt."
 
 #: pretix_pages/signals.py:48
 msgid "The page has been deleted."
-msgstr ""
+msgstr "Síðan er strikað."
 
 #: pretix_pages/signals.py:117
 #, python-brace-format
 msgid "I have read and agree with the content of the following pages: {plist}"
-msgstr ""
+msgstr "Eg havi lisið og takið undir við innihaldinum á síðuni: {plist}"
 
 #: pretix_pages/templates/pretix_pages/delete.html:4
 #: pretix_pages/templates/pretix_pages/delete.html:6
 msgid "Delete a page"
-msgstr ""
+msgstr "Strika eina síðu"
 
 #: pretix_pages/templates/pretix_pages/delete.html:9
 #, python-format
 msgid "Are you sure you want to delete the page <strong>%(name)s</strong>?"
-msgstr ""
+msgstr "Ert tú vísur í, at tú vilt strika síðuna <strong>%(name)s</strong>?"
 
 #: pretix_pages/templates/pretix_pages/delete.html:14
 msgid "Cancel"
-msgstr ""
+msgstr "Ógilda"
 
 #: pretix_pages/templates/pretix_pages/delete.html:17
 msgid "Delete"
-msgstr ""
+msgstr "Strika"
 
 #: pretix_pages/templates/pretix_pages/form.html:5
 #: pretix_pages/templates/pretix_pages/form.html:7
 msgid "Page"
-msgstr ""
+msgstr "Síða"
 
 #: pretix_pages/templates/pretix_pages/form.html:14
 msgid "General information"
-msgstr ""
+msgstr "Yvirskipað kunning"
 
 #: pretix_pages/templates/pretix_pages/form.html:25
 msgid "Please enable JavaScript"
-msgstr ""
+msgstr "Vinarliga ger JavaScript virkið"
 
 #: pretix_pages/templates/pretix_pages/form.html:53
 msgid "Save"
-msgstr ""
+msgstr "Goym"
 
 #: pretix_pages/templates/pretix_pages/form.html:62
 msgid "Page history"
-msgstr ""
+msgstr "Síðu historikkur"
 
 #: pretix_pages/templates/pretix_pages/front_page.html:4
 msgid "More information"
-msgstr ""
+msgstr "Meira kunning"
 
 #: pretix_pages/templates/pretix_pages/index.html:12
 msgid "You haven't created any pages yet."
-msgstr ""
+msgstr "Tú hevur ikki stovnað nakra síðu enn."
 
 #: pretix_pages/templates/pretix_pages/index.html:18
 #: pretix_pages/templates/pretix_pages/index.html:22
 msgid "Create a new page"
-msgstr ""
+msgstr "Stovna nýggja síðu"
 
 #: pretix_pages/views.py:43 pretix_pages/views.py:115 pretix_pages/views.py:241
 msgid "The requested page does not exist."
-msgstr ""
+msgstr "Síðan finst ikki."
 
 #: pretix_pages/views.py:59
 msgid "The order of pages has been updated."
-msgstr ""
+msgstr "Raðfylgjan á síðunum er dagførd."
 
 #: pretix_pages/views.py:94
 msgid "You already have a page on that URL."
-msgstr ""
+msgstr "Tú hevur longu eina síðu á hesum URL."
 
 #: pretix_pages/views.py:136
 msgid "The selected page has been deleted."
-msgstr ""
+msgstr "Valda síðan er strikað."
 
 #: pretix_pages/views.py:179
 msgid "Your changes have been saved."
-msgstr ""
+msgstr "Tínar broytingar eru goymdar."
 
 #: pretix_pages/views.py:190 pretix_pages/views.py:227
 msgid "We could not save your changes. See below for details."
-msgstr ""
+msgstr "Tað bar ikki til at goyma broytingarnar. Sí niðanfyri."
 
 #: pretix_pages/views.py:219
 msgid "The new page has been created."
-msgstr ""
+msgstr "Nýggja síðan er stovnað."
