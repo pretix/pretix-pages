@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: 2024-12-28 19:00+0000\n"
+"PO-Revision-Date: 2025-03-17 18:00+0000\n"
 "Last-Translator: Hijiri Umemoto <hijiri@umemoto.org>\n"
 "Language-Team: Japanese <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-pages/ja/>\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.9.2\n"
+"X-Generator: Weblate 5.10.3\n"
 
 #: pretix_pages/__init__.py:10 pretix_pages/signals.py:23
 #: pretix_pages/templates/pretix_pages/index.html:6
 #: pretix_pages/templates/pretix_pages/index.html:8
 msgid "Pages"
-msgstr ""
+msgstr "Pages"
 
 #: pretix_pages/__init__.py:12
 msgid ""
@@ -71,15 +71,15 @@ msgstr ""
 
 #: pretix_pages/signals.py:46
 msgid "The page has been created."
-msgstr ""
+msgstr "ページが作成されました。"
 
 #: pretix_pages/signals.py:47
 msgid "The page has been modified."
-msgstr ""
+msgstr "ページが変更されました。"
 
 #: pretix_pages/signals.py:48
 msgid "The page has been deleted."
-msgstr ""
+msgstr "ページが削除されました。"
 
 #: pretix_pages/signals.py:117
 #, python-brace-format
