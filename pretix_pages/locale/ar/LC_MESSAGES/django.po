@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: 2020-07-30 18:00+0000\n"
-"Last-Translator: Abdullah <abdullah.gumaijan@gmail.com>\n"
+"PO-Revision-Date: 2025-03-19 07:00+0000\n"
+"Last-Translator: Osman Elsahib <elsahib10@gmail.com>\n"
 "Language-Team: Arabic <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-pages/ar/>\n"
 "Language: ar\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 3.10.3\n"
+"X-Generator: Weblate 5.10.3\n"
 
 #: pretix_pages/__init__.py:10 pretix_pages/signals.py:23
 #: pretix_pages/templates/pretix_pages/index.html:6
 #: pretix_pages/templates/pretix_pages/index.html:8
 msgid "Pages"
-msgstr ""
+msgstr "صفحات"
 
 #: pretix_pages/__init__.py:12
 msgid ""
