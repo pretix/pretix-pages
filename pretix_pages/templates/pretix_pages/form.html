@@ -4,7 +4,7 @@
 {% load static %}
 {% block title %}{% trans "Page" %}{% endblock %}
 {% block content %}
-    <h1>{% trans "Page" %}</h1>
+    <h1>{% trans "Page" %} ({% if content_type == 'markdown' %}Markdown{% else %}HTML{% endif %})</h1>
     <form action="" method="post" class="form-horizontal" data-id="{{ page.id }}">
         {% csrf_token %}
         {% bootstrap_form_errors form type='non_fields' %}
@@ -49,6 +49,14 @@
                         </div>
                     </noscript>
 
+                    {% if content_type == 'markdown' %}
+
+                        <div>
+                            {% bootstrap_field form.text show_label=False %}
+                        </div> 
+
+                    {% else %}
+
                     <ul class="nav nav-tabs">
                         {% for lng, text in locales %}
                             <li role="presentation" {% if forloop.first %}class="active"{% endif %}>
@@ -70,6 +78,8 @@
                     <div class="sr-only">
                         {{ form.text }}
                     </div>
+                    {% endif %}
+
                 </fieldset>
                 <div class="form-group submit-group">
                     <button type="submit" class="btn btn-primary btn-save">

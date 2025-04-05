@@ -40,6 +40,7 @@ class Page(LoggedModel):
             "order is created (e.g. for terms of service)."
         ),
     )
+    content_type = models.CharField(verbose_name='Content type', default='html', choices=[('html', 'HTML'), ('markdown', 'Markdown')], max_length=10)
 
     class Meta:
         ordering = ["position", "title"]
