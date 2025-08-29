@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: 2025-08-29 18:00+0000\n"
+"PO-Revision-Date: 2025-08-30 03:00+0000\n"
 "Last-Translator: CVZ-es <damien.bremont@casadevelazquez.org>\n"
 "Language-Team: Spanish <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-pages/es/>\n"
@@ -107,7 +107,7 @@ msgstr "Cancelar"
 
 #: pretix_pages/templates/pretix_pages/delete.html:17
 msgid "Delete"
-msgstr "Borrar"
+msgstr "Eliminar"
 
 #: pretix_pages/templates/pretix_pages/form.html:5
 #: pretix_pages/templates/pretix_pages/form.html:7
