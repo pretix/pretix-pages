@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: 2025-09-08 14:00+0000\n"
+"PO-Revision-Date: 2025-09-08 18:57+0000\n"
 "Last-Translator: Alois Pospíšil <alois.pospisil@gmail.com>\n"
 "Language-Team: Czech <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-pages/cs/>\n"
@@ -162,7 +162,7 @@ msgstr "Vaše změny byly uloženy."
 
 #: pretix_pages/views.py:190 pretix_pages/views.py:227
 msgid "We could not save your changes. See below for details."
-msgstr ""
+msgstr "Vaše změny se nepodařilo uložit. Podrobnosti najdete níže."
 
 #: pretix_pages/views.py:219
 msgid "The new page has been created."
