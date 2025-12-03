@@ -8,155 +8,164 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-12-04 00:00+0000\n"
+"Last-Translator: sandra r <sandrarial@gestiontickets.online>\n"
+"Language-Team: Galician <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-pages/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #: pretix_pages/__init__.py:10 pretix_pages/signals.py:23
 #: pretix_pages/templates/pretix_pages/index.html:6
 #: pretix_pages/templates/pretix_pages/index.html:8
 msgid "Pages"
-msgstr ""
+msgstr "Páxinas"
 
 #: pretix_pages/__init__.py:12
 msgid ""
 "Allows you to add static pages to your event site, for example for a FAQ, "
 "terms of service, etc."
 msgstr ""
+"Permite engadir páxinas estáticas ao sitio web do evento, por exemplo para "
+"preguntas frecuentes, termos de servizo, etc."
 
 #: pretix_pages/models.py:11 pretix_pages/views.py:101
 msgid "URL form"
-msgstr ""
+msgstr "Formulario URL"
 
 #: pretix_pages/models.py:15
 msgid "The slug may only contain letters, numbers, dots and dashes."
-msgstr ""
+msgstr "A imaxe só pode conter letras, números, puntos e raias."
 
 #: pretix_pages/models.py:18
 msgid ""
 "This will be used to generate the URL of the page. Please only use latin "
 "letters, numbers, dots and dashes. You cannot change this afterwards."
 msgstr ""
+"Isto usarase para xerar o URL da páxina. Emprega só letras latinas, números, "
+"puntos e raias. Non poderás cambialo despois."
 
 #: pretix_pages/models.py:22 pretix_pages/templates/pretix_pages/index.html:29
 msgid "Page title"
-msgstr ""
+msgstr "Título da páxina"
 
 #: pretix_pages/models.py:23 pretix_pages/templates/pretix_pages/form.html:22
 msgid "Page content"
-msgstr ""
+msgstr "Contido da páxina"
 
 #: pretix_pages/models.py:24
 msgid "Show link on the event start page"
-msgstr ""
+msgstr "Mostrar a ligazón na páxina de inicio do evento"
 
 #: pretix_pages/models.py:25
 msgid "Show link in the event footer"
-msgstr ""
+msgstr "Mostrar a ligazón no pé de páxina do evento"
 
 #: pretix_pages/models.py:27
 msgid ""
 "Require the user to acknowledge this page before an order is created (e.g. "
 "for terms of service)."
 msgstr ""
+"Solicitar que o usuario recoñeza esta páxina antes de crear un pedido "
+"(por exemplo, para as condicións do servizo)."
 
 #: pretix_pages/signals.py:46
 msgid "The page has been created."
-msgstr ""
+msgstr "A páxina foi creada."
 
 #: pretix_pages/signals.py:47
 msgid "The page has been modified."
-msgstr ""
+msgstr "A páxina foi modificada."
 
 #: pretix_pages/signals.py:48
 msgid "The page has been deleted."
-msgstr ""
+msgstr "A páxina foi eliminada."
 
 #: pretix_pages/signals.py:117
 #, python-brace-format
 msgid "I have read and agree with the content of the following pages: {plist}"
-msgstr ""
+msgstr "Lin e estou de acordo co contido das seguintes páxinas: {plist}"
 
 #: pretix_pages/templates/pretix_pages/delete.html:4
 #: pretix_pages/templates/pretix_pages/delete.html:6
 msgid "Delete a page"
-msgstr ""
+msgstr "Eliminar unha páxina"
 
 #: pretix_pages/templates/pretix_pages/delete.html:9
 #, python-format
 msgid "Are you sure you want to delete the page <strong>%(name)s</strong>?"
-msgstr ""
+msgstr "Seguro que queres eliminar a páxina <strong>%(name)s</strong>?"
 
 #: pretix_pages/templates/pretix_pages/delete.html:14
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: pretix_pages/templates/pretix_pages/delete.html:17
 msgid "Delete"
-msgstr ""
+msgstr "Eliminar"
 
 #: pretix_pages/templates/pretix_pages/form.html:5
 #: pretix_pages/templates/pretix_pages/form.html:7
 msgid "Page"
-msgstr ""
+msgstr "Páxina"
 
 #: pretix_pages/templates/pretix_pages/form.html:14
 msgid "General information"
-msgstr ""
+msgstr "Información xeral"
 
 #: pretix_pages/templates/pretix_pages/form.html:25
 msgid "Please enable JavaScript"
-msgstr ""
+msgstr "Por favor, activa JavaScript"
 
 #: pretix_pages/templates/pretix_pages/form.html:53
 msgid "Save"
-msgstr ""
+msgstr "Gardar"
 
 #: pretix_pages/templates/pretix_pages/form.html:62
 msgid "Page history"
-msgstr ""
+msgstr "Historial da páxina"
 
 #: pretix_pages/templates/pretix_pages/front_page.html:4
 msgid "More information"
-msgstr ""
+msgstr "Máis información"
 
 #: pretix_pages/templates/pretix_pages/index.html:12
 msgid "You haven't created any pages yet."
-msgstr ""
+msgstr "Aínda non creaches ningunha páxina."
 
 #: pretix_pages/templates/pretix_pages/index.html:18
 #: pretix_pages/templates/pretix_pages/index.html:22
 msgid "Create a new page"
-msgstr ""
+msgstr "Crea unha páxina nova"
 
 #: pretix_pages/views.py:43 pretix_pages/views.py:115 pretix_pages/views.py:241
 msgid "The requested page does not exist."
-msgstr ""
+msgstr "A páxina solicitada non existe."
 
 #: pretix_pages/views.py:59
 msgid "The order of pages has been updated."
-msgstr ""
+msgstr "Actualizouse a orde das páxinas."
 
 #: pretix_pages/views.py:94
 msgid "You already have a page on that URL."
-msgstr ""
+msgstr "Xa tes unha páxina nesa URL."
 
 #: pretix_pages/views.py:136
 msgid "The selected page has been deleted."
-msgstr ""
+msgstr "A páxina seleccionada foi eliminada."
 
 #: pretix_pages/views.py:179
 msgid "Your changes have been saved."
-msgstr ""
+msgstr "Gardáronse os cambios."
 
 #: pretix_pages/views.py:190 pretix_pages/views.py:227
 msgid "We could not save your changes. See below for details."
-msgstr ""
+msgstr "Non puidemos gardar os cambios. Consulta os detalles a continuación."
 
 #: pretix_pages/views.py:219
 msgid "The new page has been created."
-msgstr ""
+msgstr "Creouse a nova páxina."
