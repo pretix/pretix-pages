@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: 2024-11-07 03:00+0000\n"
-"Last-Translator: Christiaan de Die le Clercq <contact@techwolf12.nl>\n"
-"Language-Team: Dutch <https://translate.pretix.eu/projects/pretix/"
-"pretix-plugin-pages/nl/>\n"
+"PO-Revision-Date: 2026-01-22 23:28+0000\n"
+"Last-Translator: Ruud Hendrickx <ruud@leckxicon.eu>\n"
+"Language-Team: Dutch <https://translate.pretix.eu/projects/pretix/pretix-"
+"plugin-pages/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.8.1\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #: pretix_pages/__init__.py:10 pretix_pages/signals.py:23
 #: pretix_pages/templates/pretix_pages/index.html:6
@@ -110,7 +110,7 @@ msgstr "Annuleer"
 
 #: pretix_pages/templates/pretix_pages/delete.html:17
 msgid "Delete"
-msgstr "Verwijder"
+msgstr "Verwijderen"
 
 #: pretix_pages/templates/pretix_pages/form.html:5
 #: pretix_pages/templates/pretix_pages/form.html:7
@@ -139,7 +139,7 @@ msgstr "Meer informatie"
 
 #: pretix_pages/templates/pretix_pages/index.html:12
 msgid "You haven't created any pages yet."
-msgstr "U heeft nog geen pagina's aangemaakt."
+msgstr "U hebt nog geen pagina's aangemaakt."
 
 #: pretix_pages/templates/pretix_pages/index.html:18
 #: pretix_pages/templates/pretix_pages/index.html:22
@@ -156,7 +156,7 @@ msgstr "De volgorde van pagina's is bijgewerkt."
 
 #: pretix_pages/views.py:94
 msgid "You already have a page on that URL."
-msgstr "U heeft al een pagina op die URL."
+msgstr "U hebt al een pagina op die URL."
 
 #: pretix_pages/views.py:136
 msgid "The selected page has been deleted."
@@ -169,7 +169,7 @@ msgstr "Uw wijzigingen zijn opgeslagen."
 #: pretix_pages/views.py:190 pretix_pages/views.py:227
 msgid "We could not save your changes. See below for details."
 msgstr ""
-"De wijzigingen konden niet worden opgeslagen, zie hieronder voor meer "
+"De wijzigingen konden niet worden opgeslagen. Zie hieronder voor meer "
 "informatie."
 
 #: pretix_pages/views.py:219
