@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-06 10:11+0100\n"
-"PO-Revision-Date: 2026-01-24 07:28+0000\n"
+"PO-Revision-Date: 2026-02-02 23:28+0000\n"
 "Last-Translator: Ruud Hendrickx <ruud@leckxicon.eu>\n"
 "Language-Team: Dutch <https://translate.pretix.eu/projects/pretix/pretix-"
 "plugin-pages/nl/>\n"
@@ -30,12 +30,12 @@ msgid ""
 "Allows you to add static pages to your event site, for example for a FAQ, "
 "terms of service, etc."
 msgstr ""
-"Staat u toe om statische pagina's aan uw evenementswebsite toe te voegen, "
-"bijvoorbeeld voor een FAQ, algemene voorwaarden, etc."
+"Hiermee kunt u statische pagina's toevoegen aan uw evenementensite, "
+"bijvoorbeeld voor veelgestelde vragen, servicevoorwaarden, enz."
 
 #: pretix_pages/models.py:11 pretix_pages/views.py:101
 msgid "URL form"
-msgstr "URL-formaat"
+msgstr "URL formulier"
 
 #: pretix_pages/models.py:15
 msgid "The slug may only contain letters, numbers, dots and dashes."
@@ -56,7 +56,7 @@ msgstr "Paginatitel"
 
 #: pretix_pages/models.py:23 pretix_pages/templates/pretix_pages/form.html:22
 msgid "Page content"
-msgstr "Paginainhoud"
+msgstr "Pagina-inhoud"
 
 #: pretix_pages/models.py:24
 msgid "Show link on the event start page"
@@ -96,7 +96,7 @@ msgstr ""
 #: pretix_pages/templates/pretix_pages/delete.html:4
 #: pretix_pages/templates/pretix_pages/delete.html:6
 msgid "Delete a page"
-msgstr "Verwijder een pagina"
+msgstr "Pagina verwijderen"
 
 #: pretix_pages/templates/pretix_pages/delete.html:9
 #, python-format
