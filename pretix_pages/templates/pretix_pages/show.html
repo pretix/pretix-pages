@@ -1,13 +1,20 @@
 {% extends "pretixpresale/event/base.html" %}
 {% load i18n %}
+{% load rich_text %}
 {% load bootstrap3 %}
 
 {% block title %}{{ page.title }}{% endblock %}
 {% block content %}
 
     <h2>{{ page.title }}</h2>
+    {% if page.content_type == 'markdown' %}
+    
+        {{ content|rich_text }}
+
+    {% else %}
     <div class="ql-content">
         {{ content|safe }}
     </div>
+    {% endif %}
 
 {% endblock %}
