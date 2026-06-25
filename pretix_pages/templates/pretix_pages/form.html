@@ -61,7 +61,7 @@
                         {% for lng, text in locales %}
                             <div class="tab-pane {% if forloop.first %}active{% endif %}" id="editor-{{ lng }}">
                                 <div class="editor" data-lng="{{ lng }}">
-                                    {{ text|safe }}
+                                    {{ text }}
                                 </div>
                             </div>
                         {% endfor %}

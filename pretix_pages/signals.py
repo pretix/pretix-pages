@@ -1,6 +1,7 @@
 from django.dispatch import receiver
 from django.template.loader import get_template
 from django.urls import resolve, reverse
+from django.utils.html import format_html, format_html_join
 from django.utils.translation import get_language, gettext_lazy as _
 from pretix.base.signals import event_copy_data, logentry_display
 from pretix.control.signals import html_head, nav_event
@@ -112,30 +113,25 @@ def html_head_presale(sender, request=None, **kwargs):
 
 @receiver(checkout_confirm_messages, dispatch_uid="pages_confirm_messages")
 def confirm_messages(sender, *args, **kwargs):
-    cached = sender.cache.get("pages_confirm_messages_" + get_language())
+    cached = sender.cache.get("pages_confirm_messages_html_" + get_language())
     if cached is None:
         pages = list(Page.objects.filter(event=sender, require_confirmation=True))
         if pages:
+            attrs_gen = (
+                {
+                    "title": str(p.title),
+                    "url": eventreverse(sender, "plugins:pretix_pages:show", kwargs={"slug": p.slug}),
+                }
+                for p in pages
+            )
+            plist = format_html_join(", ", '<a href="{url}" target="_blank">{title}</a>', attrs_gen)
             cached = {
-                "pages": _(
-                    "I have read and agree with the content of the following pages: {plist}"
-                ).format(
-                    plist=", ".join(
-                        [
-                            '<a href="{url}" target="_blank">{title}</a>'.format(
-                                title=str(p.title),
-                                url=eventreverse(
-                                    sender,
-                                    "plugins:pretix_pages:show",
-                                    kwargs={"slug": p.slug},
-                                ),
-                            )
-                            for p in pages
-                        ]
-                    )
+                "pages": format_html(
+                    _("I have read and agree with the content of the following pages: {plist}"),
+                    plist=plist,
                 )
             }
         else:
             cached = {}
-        sender.cache.set("pages_confirm_messages_" + get_language(), cached)
+        sender.cache.set("pages_confirm_messages_html_" + get_language(), cached)
     return cached

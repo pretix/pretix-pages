@@ -10,6 +10,7 @@ from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.crypto import get_random_string
+from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, ListView, TemplateView, UpdateView
 from pretix.base.forms import I18nModelForm
@@ -218,14 +219,14 @@ class PageUpdate(
         )
 
         for lng in self.request.event.settings.locales:
-            dataline = (
+            localized_text = bleach_page_content(
                 self.object.text.data[lng]
                 if self.object.text is not None
                 and (isinstance(self.object.text.data, dict))
                 and lng in self.object.text.data
                 else ""
             )
-            ctx["locales"].append((lng, dataline))
+            ctx["locales"].append((lng, localized_text))
         return ctx
 
     @transaction.atomic
@@ -306,17 +307,20 @@ class ShowPageView(TemplateView):
         ctx = super().get_context_data()
         page = self.get_page()
         ctx["page"] = page
-
-        attributes = dict(bleach.ALLOWED_ATTRIBUTES)
-        attributes["a"] = ["href", "title", "target"]
-        attributes["p"] = ["class"]
-        attributes["li"] = ["class"]
-        attributes["img"] = ["src"]
-
-        ctx["content"] = bleach.clean(
-            str(page.text),
-            tags=bleach.ALLOWED_TAGS | {"img", "p", "br", "s", "sup", "sub", "u", "h3", "h4", "h5", "h6"},
-            attributes=attributes,
-            protocols=bleach.ALLOWED_PROTOCOLS | {"data"},
-        )
+        ctx["content"] = bleach_page_content(str(page.text))
         return ctx
+
+
+def bleach_page_content(text):
+    attributes = dict(bleach.ALLOWED_ATTRIBUTES)
+    attributes["a"] = ["href", "title", "target"]
+    attributes["p"] = ["class"]
+    attributes["li"] = ["class"]
+    attributes["img"] = ["src"]
+
+    return mark_safe(bleach.clean(
+        str(text),
+        tags=bleach.ALLOWED_TAGS | {"img", "p", "br", "s", "sup", "sub", "u", "h3", "h4", "h5", "h6"},
+        attributes=attributes,
+        protocols=bleach.ALLOWED_PROTOCOLS | {"data"},
+    ))
